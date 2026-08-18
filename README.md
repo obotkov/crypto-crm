@@ -9,12 +9,20 @@
 ## Как устроен флоу
 
 ```
-локальные правки  ->  git push origin main  ->  GitHub Actions  ->  сервер (docker compose)
+локальные правки  ->  git push origin main  ->  GitHub Actions  ->  сервер: git pull + docker compose
 ```
 
 Ничего вручную на сервере делать не нужно: пуш в `main` запускает workflow
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), он заливает файлы
-на сервер по rsync, перезапускает контейнеры и проверяет, что сайт отвечает 200.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), он подключается к серверу
+по SSH и запускает `deploy/deploy.sh`. Скрипт сам тянет свежий `main` из GitHub,
+валидирует Caddyfile, поднимает контейнеры и перечитывает конфиг без простоя;
+затем workflow проверяет, что сайт отвечает 200.
+
+Задеплоить вручную (то же самое, без Actions):
+
+```bash
+ssh root@89.110.92.149 'cd /opt/wildex && bash deploy/deploy.sh'
+```
 
 ## Локальная разработка
 
@@ -32,8 +40,8 @@ Caddy, что и на проде; если нет — простой стати�
 | `site/` | статика, которую раздаёт Caddy (`index.html`, `assets/`) |
 | `Caddyfile` | конфиг Caddy: домен, HTTPS, заголовки, `/healthz` |
 | `docker-compose.yml` | сервис `caddy` с томами под сертификаты и логи |
-| `deploy/deploy.sh` | запускается на сервере: валидация конфига + `compose up` |
-| `deploy/bootstrap-server.sh` | разовая подготовка сервера (Docker, ufw, каталог) |
+| `deploy/deploy.sh` | запускается на сервере: `git pull` + валидация конфига + `compose up` |
+| `deploy/bootstrap-server.sh` | разовая подготовка сервера (Docker, ufw, clone репозитория) |
 | `.github/workflows/deploy.yml` | автодеплой при пуше в `main` |
 | `crypto-design/` | макеты и дизайн-система Nocturne (в деплой не попадает) |
 

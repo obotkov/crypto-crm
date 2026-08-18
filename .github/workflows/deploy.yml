@@ -19,8 +19,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Настроить SSH-ключ
         run: |
           mkdir -p ~/.ssh && chmod 700 ~/.ssh
@@ -40,18 +38,9 @@ jobs:
             IdentitiesOnly yes
           EOF
 
-      - name: Залить файлы на сервер
-        run: |
-          ssh deploy-target "mkdir -p $DEPLOY_PATH"
-          rsync -az --delete \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude 'crypto-design' \
-            ./ "deploy-target:$DEPLOY_PATH/"
-
-      - name: Поднять контейнеры
-        run: |
-          ssh deploy-target "cd $DEPLOY_PATH && bash deploy/deploy.sh"
+      # Сервер сам тянет свежий main из GitHub — сюда код выкладывать не нужно.
+      - name: Развернуть на сервере
+        run: ssh deploy-target "cd $DEPLOY_PATH && bash deploy/deploy.sh"
 
       - name: Проверить, что сайт отвечает
         run: |
