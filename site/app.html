@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WildEx — портфели</title>
+<meta name="description" content="Макеты интерфейса WildEx: портфели, монеты, сделки и история.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/assets/nocturne.css">
+<link rel="stylesheet" href="/assets/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161826'/%3E%3Cpath d='M7 11l3.5 10L14 13l3.5 8L21 11' fill='none' stroke='%239184d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body class="app">
+
+<div class="shell">
+
+  <!-- ════ Сайдбар: от 900px, ниже вместо него таб-бар снизу ════ -->
+  <aside class="sidebar">
+    <a class="brand side-brand" href="/">
+      <span class="brand-mark"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#logo"></use></svg></span>
+      WildEx
+    </a>
+
+    <button class="side-link" data-goto="portfolios" data-nav="primary" aria-current="page">
+      <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#wallet"></use></svg>Портфели
+    </button>
+    <div class="side-sub">
+      <button data-goto="portfolio" data-nav="sub" aria-current="true">Core Long</button>
+      <button data-goto="portfolio" data-nav="sub">Alt Rotation</button>
+      <button data-goto="portfolio" data-nav="sub">Yield Desk</button>
+    </div>
+    <button class="side-link" data-goto="coins" data-nav="primary">
+      <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#coins"></use></svg>Монеты
+    </button>
+    <button class="side-link" data-goto="history" data-nav="primary">
+      <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#receipt"></use></svg>История
+    </button>
+    <button class="side-link" data-goto="settings" data-nav="primary">
+      <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#gear"></use></svg>Настройки
+    </button>
+
+    <a class="side-user" href="/login.html">
+      <span class="avatar">OB</span>o.botkov
+    </a>
+  </aside>
+
+  <main class="main">
+
+    <!-- ════ Портфели ════ -->
+    <section class="view" data-view="portfolios" aria-label="Портфели">
+      <div class="head">
+        <h1>Портфели</h1>
+        <span class="spacer"></span>
+        <button class="btn btn-primary" data-open-sheet="sheet-portfolio">
+          <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#plus"></use></svg>
+          <span class="only-wide">Новый портфель</span>
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <span class="search">
+          <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#search"></use></svg>
+          Поиск портфеля или монеты
+        </span>
+        <span class="spacer"></span>
+        <span class="hint">Цены обновлены 12 с назад</span>
+      </div>
+
+      <div class="stat-grid">
+        <div class="card elev-sm stat">
+          <span class="kicker">Общий баланс</span>
+          <span class="v lg num">$184,392.18</span>
+          <span class="pos" style="font-size:13px">+$3,181.44 · +1.76% за 24ч</span>
+        </div>
+        <div class="card elev-sm stat">
+          <span class="kicker">Свободные средства</span>
+          <span class="v num">$19,500.11</span>
+          <span class="hint">в трёх портфелях</span>
+        </div>
+        <div class="card elev-sm stat">
+          <span class="kicker">P&amp;L всего</span>
+          <span class="v num pos">+$16,704.90</span>
+          <span class="hint">+9.96%</span>
+        </div>
+      </div>
+
+      <div class="head" style="padding-top:var(--space-8)">
+        <span class="kicker">Портфели · 3</span>
+        <span class="spacer"></span>
+        <span class="hint" style="color:var(--color-accent-300)">Сортировка: по стоимости</span>
+      </div>
+
+      <!-- Узкий экран: строками -->
+      <div class="rows only-narrow">
+        <button class="row" data-goto="portfolio">
+          <span class="grow"><span class="t">Core Long</span><span class="s">5 активов · свободно $6,120.00</span></span>
+          <span class="r"><span class="t num">$112,480.55</span><span class="s pos">+20.2%</span></span>
+        </button>
+        <button class="row" data-goto="portfolio">
+          <span class="grow"><span class="t">Alt Rotation</span><span class="s">11 активов · свободно $980.11</span></span>
+          <span class="r"><span class="t num">$48,207.32</span><span class="s neg">−4.8%</span></span>
+        </button>
+        <button class="row" data-goto="portfolio">
+          <span class="grow"><span class="t">Yield Desk</span><span class="s">4 актива · свободно $12,400.00</span></span>
+          <span class="r"><span class="t num">$23,704.31</span><span class="s pos">+2.1%</span></span>
+        </button>
+      </div>
+
+      <!-- Широкий экран: таблицей -->
+      <div class="table-wrap only-wide">
+        <table class="table">
+          <thead>
+            <tr><th>Название</th><th>Активы</th><th>Свободные</th>
+                <th style="text-align:right">Стоимость</th><th style="text-align:right">Изменение</th></tr>
+          </thead>
+          <tbody>
+            <tr data-goto="portfolio"><td>Core Long</td><td class="dim">5</td><td class="dim num">$6,120.00</td>
+                <td style="text-align:right" class="num">$112,480.55</td><td style="text-align:right" class="pos">+20.2%</td></tr>
+            <tr data-goto="portfolio"><td>Alt Rotation</td><td class="dim">11</td><td class="dim num">$980.11</td>
+                <td style="text-align:right" class="num">$48,207.32</td><td style="text-align:right" class="neg">−4.8%</td></tr>
+            <tr data-goto="portfolio"><td>Yield Desk</td><td class="dim">4</td><td class="dim num">$12,400.00</td>
+                <td style="text-align:right" class="num">$23,704.31</td><td style="text-align:right" class="pos">+2.1%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cards-row">
+        <div class="card elev-sm" style="gap:var(--space-3);padding:var(--space-6)">
+          <span class="kicker">Динамика общего баланса</span>
+          <svg class="chart" style="height:120px" viewBox="0 0 700 120" preserveAspectRatio="none" aria-label="График общего баланса за месяц" role="img">
+            <path d="M0 96 L58 88 L116 100 L175 74 L233 82 L291 58 L350 66 L408 44 L466 52 L525 30 L583 38 L641 20 L700 14"
+                  fill="none" stroke="#9184d9" stroke-width="2"/>
+          </svg>
+          <div class="chips" role="tablist" aria-label="Период">
+            <button class="chip" role="tab" aria-selected="false">1Н</button>
+            <button class="chip" role="tab" aria-selected="true">1М</button>
+            <button class="chip" role="tab" aria-selected="false">1Г</button>
+          </div>
+        </div>
+        <div class="card elev-sm" style="gap:var(--space-3);padding:var(--space-6)">
+          <span class="kicker">Распределение</span>
+          <span class="alloc">
+            <span style="flex:61;background:var(--color-accent)"></span>
+            <span style="flex:26;background:var(--color-accent-600)"></span>
+            <span style="flex:13;background:var(--color-neutral-700)"></span>
+          </span>
+          <div class="alloc-legend" style="flex-direction:column;gap:5px">
+            <span>Core Long · 61%</span>
+            <span>Alt Rotation · 26%</span>
+            <span>Yield Desk · 13%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ Портфель ════ -->
+    <section class="view" data-view="portfolio" aria-label="Портфель Core Long">
+      <nav class="crumbs" aria-label="Хлебные крошки">
+        <button data-goto="portfolios">Портфели</button>
+        <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#caret-right"></use></svg>
+        <span class="now">Core Long</span>
+      </nav>
+
+      <div class="head">
+        <h1>Core Long</h1>
+        <span class="hint">USD · создан 14 июн 2026</span>
+        <span class="spacer"></span>
+        <button class="btn btn-primary" data-open-sheet="sheet-trade">
+          <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#plus"></use></svg>
+          <span class="only-wide">Сделка</span>
+        </button>
+      </div>
+
+      <div class="stat-grid">
+        <div class="card elev-sm stat"><span class="kicker">Стоимость</span><span class="v num">$112,480.55</span></div>
+        <div class="card elev-sm stat"><span class="kicker">P&amp;L</span><span class="v num pos">+$18,904.22</span><span class="hint pos">+20.2%</span></div>
+        <div class="card elev-sm stat"><span class="kicker">Свободные</span><span class="v num">$6,120.00</span></div>
+        <div class="card elev-sm stat"><span class="kicker">Активы</span><span class="v num">5</span></div>
+      </div>
+
+      <div class="cards-row">
+        <div class="card elev-sm" style="gap:var(--space-3);padding:var(--space-6)">
+          <div style="display:flex;align-items:center;gap:var(--space-4)">
+            <span class="kicker">Динамика</span>
+            <span class="spacer" style="margin-left:auto"></span>
+            <div class="chips" role="tablist" aria-label="Период">
+              <button class="chip" role="tab" aria-selected="false">1Д</button>
+              <button class="chip" role="tab" aria-selected="false">1Н</button>
+              <button class="chip" role="tab" aria-selected="true">1М</button>
+              <button class="chip" role="tab" aria-selected="false">1Г</button>
+              <button class="chip" role="tab" aria-selected="false">ВСЁ</button>
+            </div>
+          </div>
+          <svg class="chart" viewBox="0 0 480 150" preserveAspectRatio="none" role="img" aria-label="Стоимость портфеля за месяц">
+            <defs>
+              <linearGradient id="grad-portfolio" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9184d9" stop-opacity=".3"/>
+                <stop offset="1" stop-color="#9184d9" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 118 L40 110 L80 124 L120 94 L160 102 L200 76 L240 86 L280 58 L320 66 L360 42 L400 50 L440 26 L480 18 L480 150 L0 150 Z" fill="url(#grad-portfolio)"/>
+            <path d="M0 118 L40 110 L80 124 L120 94 L160 102 L200 76 L240 86 L280 58 L320 66 L360 42 L400 50 L440 26 L480 18" fill="none" stroke="#9184d9" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <div class="card elev-sm" style="gap:var(--space-3);padding:var(--space-6);align-items:center">
+          <span class="kicker" style="align-self:flex-start">Распределение</span>
+          <svg class="donut" viewBox="0 0 120 120" role="img" aria-label="Доли активов: BTC 33%, SOL 24%, ETH 17%">
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#232532" stroke-width="16"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#9184d9" stroke-width="16" stroke-dasharray="150 302"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#796cbf" stroke-width="16" stroke-dasharray="72 380" stroke-dashoffset="-152"/>
+            <circle cx="60" cy="60" r="48" fill="none" stroke="#b5abfc" stroke-width="16" stroke-dasharray="52 400" stroke-dashoffset="-226"/>
+          </svg>
+          <div class="alloc-legend" style="align-self:stretch;justify-content:space-between">
+            <span>BTC 33%</span><span>SOL 24%</span><span>ETH 17%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="head">
+        <span class="kicker">Монеты</span>
+        <span class="spacer"></span>
+        <span class="hint">Откройте монету, чтобы увидеть сделки</span>
+      </div>
+
+      <div class="rows only-narrow">
+        <button class="row" data-goto="coin">
+          <span class="sym">BTC</span>
+          <span class="grow"><span class="t">Bitcoin <span class="dim num">1.2140</span></span><span class="s num">$64,912.40 · средняя $52,110.00</span></span>
+          <span class="r"><span class="t num">$78,803.65</span><span class="s pos">+1.84%</span></span>
+        </button>
+        <button class="row" data-goto="coin">
+          <span class="sym">SOL</span>
+          <span class="grow"><span class="t">Solana <span class="dim num">210.00</span></span><span class="s num">$178.42 · средняя $141.20</span></span>
+          <span class="r"><span class="t num">$37,468.20</span><span class="s pos">+4.10%</span></span>
+        </button>
+        <button class="row" data-goto="coin">
+          <span class="sym">ETH</span>
+          <span class="grow"><span class="t">Ethereum <span class="dim num">8.4000</span></span><span class="s num">$3,412.88 · средняя $2,904.00</span></span>
+          <span class="r"><span class="t num">$28,668.19</span><span class="s neg">−0.62%</span></span>
+        </button>
+        <button class="row" data-goto="coin">
+          <span class="sym">LINK</span>
+          <span class="grow"><span class="t">Chainlink <span class="dim num">640.00</span></span><span class="s num">$18.44 · средняя $15.02</span></span>
+          <span class="r"><span class="t num">$11,801.60</span><span class="s pos">+2.21%</span></span>
+        </button>
+      </div>
+
+      <div class="table-wrap only-wide">
+        <table class="table">
+          <thead>
+            <tr><th>Монета</th><th>Количество</th><th>Средняя</th><th>Цена</th>
+                <th style="text-align:right">Стоимость</th><th style="text-align:right">24ч</th></tr>
+          </thead>
+          <tbody>
+            <tr data-goto="coin"><td>Bitcoin <span class="dim">BTC</span></td><td class="num">1.2140</td><td class="dim num">$52,110.00</td>
+                <td class="num">$64,912.40</td><td style="text-align:right" class="num">$78,803.65</td><td style="text-align:right" class="pos">+1.84%</td></tr>
+            <tr data-goto="coin"><td>Solana <span class="dim">SOL</span></td><td class="num">210.00</td><td class="dim num">$141.20</td>
+                <td class="num">$178.42</td><td style="text-align:right" class="num">$37,468.20</td><td style="text-align:right" class="pos">+4.10%</td></tr>
+            <tr data-goto="coin"><td>Ethereum <span class="dim">ETH</span></td><td class="num">8.4000</td><td class="dim num">$2,904.00</td>
+                <td class="num">$3,412.88</td><td style="text-align:right" class="num">$28,668.19</td><td style="text-align:right" class="neg">−0.62%</td></tr>
+            <tr data-goto="coin"><td>Chainlink <span class="dim">LINK</span></td><td class="num">640.00</td><td class="dim num">$15.02</td>
+                <td class="num">$18.44</td><td style="text-align:right" class="num">$11,801.60</td><td style="text-align:right" class="pos">+2.21%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="height:var(--space-8)"></div>
+    </section>
+
+    <!-- ════ Монета ════ -->
+    <section class="view" data-view="coin" aria-label="Bitcoin в портфеле Core Long">
+      <nav class="crumbs" aria-label="Хлебные крошки">
+        <button data-goto="portfolios">Портфели</button>
+        <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#caret-right"></use></svg>
+        <button data-goto="portfolio">Core Long</button>
+        <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#caret-right"></use></svg>
+        <span class="now">Bitcoin</span>
+      </nav>
+
+      <div class="head">
+        <span class="sym" style="width:34px;height:34px;font-size:10px">BTC</span>
+        <div>
+          <div class="kicker">В портфеле</div>
+          <div class="num" style="font-family:var(--font-heading);font-weight:500;font-size:28px;line-height:1.1;letter-spacing:-.02em">$78,803.65</div>
+        </div>
+        <span class="spacer"></span>
+        <button class="btn btn-secondary">Продать</button>
+        <button class="btn btn-primary" data-open-sheet="sheet-trade">
+          <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#plus"></use></svg>Сделка
+        </button>
+      </div>
+
+      <div class="toolbar" style="gap:var(--space-6)">
+        <span class="dim num" style="font-size:13px">1.2140 BTC · средняя $52,110.00</span>
+        <span class="pos num" style="font-size:13px">+$15,547.51 (+24.6%)</span>
+      </div>
+
+      <div class="cards-row">
+        <div class="card elev-sm" style="gap:var(--space-3);padding:var(--space-6)">
+          <div style="display:flex;align-items:center">
+            <span class="kicker">Цена BTC</span>
+            <span class="spacer" style="margin-left:auto"></span>
+            <span class="num" style="font-size:13px">$64,912.40 <span class="pos">+1.84%</span></span>
+          </div>
+          <svg class="chart" style="height:140px" viewBox="0 0 560 140" preserveAspectRatio="none" role="img" aria-label="Цена BTC за месяц">
+            <defs>
+              <linearGradient id="grad-coin" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9184d9" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#9184d9" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 112 L47 104 L93 118 L140 88 L187 96 L233 72 L280 80 L327 54 L373 62 L420 38 L467 46 L513 24 L560 16 L560 140 L0 140 Z" fill="url(#grad-coin)"/>
+            <path d="M0 112 L47 104 L93 118 L140 88 L187 96 L233 72 L280 80 L327 54 L373 62 L420 38 L467 46 L513 24 L560 16" fill="none" stroke="#9184d9" stroke-width="2"/>
+          </svg>
+          <div class="chips" role="tablist" aria-label="Период">
+            <button class="chip" role="tab" aria-selected="false">1Д</button>
+            <button class="chip" role="tab" aria-selected="false">1Н</button>
+            <button class="chip" role="tab" aria-selected="true">1М</button>
+            <button class="chip" role="tab" aria-selected="false">ВСЁ</button>
+          </div>
+        </div>
+
+        <div class="card elev-sm" style="gap:9px;padding:var(--space-6);font-size:13px">
+          <span class="kicker">Позиция</span>
+          <div style="display:flex"><span class="dim">Куплено</span><span style="margin-left:auto" class="num">1.4640 BTC</span></div>
+          <div style="display:flex"><span class="dim">Продано</span><span style="margin-left:auto" class="num">0.2500 BTC</span></div>
+          <div style="display:flex"><span class="dim">Реализованный P&amp;L</span><span style="margin-left:auto" class="num pos">+$2,273.50</span></div>
+          <div style="display:flex"><span class="dim">Нереализованный</span><span style="margin-left:auto" class="num pos">+$15,547.51</span></div>
+          <div style="display:flex"><span class="dim">Доля портфеля</span><span style="margin-left:auto" class="num">33%</span></div>
+        </div>
+      </div>
+
+      <div class="head">
+        <span class="kicker">Сделки по BTC · 5</span>
+        <span class="spacer"></span>
+        <div class="chips" role="tablist" aria-label="Тип сделок">
+          <button class="chip" role="tab" aria-selected="true">Все</button>
+          <button class="chip" role="tab" aria-selected="false">Покупки</button>
+          <button class="chip" role="tab" aria-selected="false">Продажи</button>
+          <button class="chip" role="tab" aria-selected="false">Переводы</button>
+        </div>
+      </div>
+
+      <div class="rows only-narrow">
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-down-left"></use></svg></span>
+          <span class="grow"><span class="t">Покупка 0.1500</span><span class="s num">18 авг 09:41 · $64,912.40</span></span>
+          <span class="r"><span class="t num">−$9,736.86</span><span class="s dim">+0.0%</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right"></use></svg></span>
+          <span class="grow"><span class="t">Продажа 0.2500</span><span class="s num">02 авг 14:10 · $61,204.00</span></span>
+          <span class="r"><span class="t num pos">+$15,301.00</span><span class="s pos">+18.4%</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-down-left"></use></svg></span>
+          <span class="grow"><span class="t">Покупка 0.4000</span><span class="s num">21 июл 11:02 · $57,880.15</span></span>
+          <span class="r"><span class="t num">−$23,152.06</span><span class="s pos">+12.1%</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrows-left-right"></use></svg></span>
+          <span class="grow"><span class="t">Перевод 0.3140</span><span class="s">09 июл 15:04 · из Alt Rotation</span></span>
+          <span class="r"><span class="t num">$20,382.49</span><span class="s dim">—</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-down-left"></use></svg></span>
+          <span class="grow"><span class="t">Покупка 0.6000</span><span class="s num">14 июн 10:26 · $48,204.90</span></span>
+          <span class="r"><span class="t num">−$28,922.94</span><span class="s pos">+34.7%</span></span>
+        </div>
+      </div>
+
+      <div class="table-wrap only-wide">
+        <table class="table">
+          <thead>
+            <tr><th>Дата</th><th>Тип</th><th>Количество</th><th>Цена</th><th>Оплата</th>
+                <th style="text-align:right">Сумма</th><th style="text-align:right">P&amp;L</th></tr>
+          </thead>
+          <tbody>
+            <tr style="cursor:default"><td>18 авг 09:41</td><td>Покупка</td><td class="num">0.1500</td><td class="num">$64,912.40</td><td class="dim">USDT</td>
+                <td style="text-align:right" class="num">−$9,736.86</td><td style="text-align:right" class="dim">+0.0%</td></tr>
+            <tr style="cursor:default"><td>02 авг 14:10</td><td>Продажа</td><td class="num">0.2500</td><td class="num">$61,204.00</td><td class="dim">Cash USD</td>
+                <td style="text-align:right" class="num pos">+$15,301.00</td><td style="text-align:right" class="pos">+18.4%</td></tr>
+            <tr style="cursor:default"><td>21 июл 11:02</td><td>Покупка</td><td class="num">0.4000</td><td class="num">$57,880.15</td><td class="dim">USDT</td>
+                <td style="text-align:right" class="num">−$23,152.06</td><td style="text-align:right" class="pos">+12.1%</td></tr>
+            <tr style="cursor:default"><td>09 июл 15:04</td><td>Перевод</td><td class="num">0.3140</td><td class="dim">—</td><td class="dim">из Alt Rotation</td>
+                <td style="text-align:right" class="num">$20,382.49</td><td style="text-align:right" class="dim">—</td></tr>
+            <tr style="cursor:default"><td>14 июн 10:26</td><td>Покупка</td><td class="num">0.6000</td><td class="num">$48,204.90</td><td class="dim">Cash USD</td>
+                <td style="text-align:right" class="num">−$28,922.94</td><td style="text-align:right" class="pos">+34.7%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="height:var(--space-8)"></div>
+    </section>
+
+    <!-- ════ Монеты ════ -->
+    <section class="view" data-view="coins" aria-label="Монеты">
+      <div class="head">
+        <h1>Монеты</h1>
+        <span class="hint only-wide">42 загружено · синхронизация 09:38:04 · следующая через 4:22</span>
+        <span class="spacer"></span>
+        <button class="btn btn-primary">
+          <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg>
+          <span class="only-wide">Обновить сейчас</span>
+        </button>
+      </div>
+
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="Режим просмотра">
+          <button role="tab" aria-selected="true" aria-controls="panel-sync">Синхронизация</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-market">Рынок</button>
+        </div>
+        <span class="search">
+          <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#search"></use></svg>
+          Символ или название
+        </span>
+      </div>
+
+      <!-- Режим синхронизации -->
+      <div class="panel" id="panel-sync">
+        <div class="toolbar">
+          <div class="chips" role="tablist" aria-label="Фильтр по режиму">
+            <button class="chip" role="tab" aria-selected="true">Все</button>
+            <button class="chip" role="tab" aria-selected="false">Авто</button>
+            <button class="chip" role="tab" aria-selected="false">Вручную</button>
+            <button class="chip" role="tab" aria-selected="false">Отключены</button>
+          </div>
+          <span class="spacer"></span>
+          <span class="hint only-wide">Выбрано: 0</span>
+          <button class="btn btn-secondary only-wide" style="font-size:12px">Сменить режим</button>
+        </div>
+
+        <div class="rows only-narrow">
+          <div class="row" style="cursor:default">
+            <span class="sym">BTC</span>
+            <span class="grow"><span class="t">Bitcoin</span><span class="s num">$64,912.40 · <span class="pos">+1.84%</span></span></span>
+            <span class="r"><span class="tag tag-accent">Авто · 1 мин</span><span class="s">12 с назад</span></span>
+          </div>
+          <div class="row" style="cursor:default">
+            <span class="sym">ETH</span>
+            <span class="grow"><span class="t">Ethereum</span><span class="s num">$3,412.88 · <span class="neg">−0.62%</span></span></span>
+            <span class="r"><span class="tag tag-accent">Авто · 1 мин</span><span class="s">12 с назад</span></span>
+          </div>
+          <div class="row" style="cursor:default">
+            <span class="sym">SOL</span>
+            <span class="grow"><span class="t">Solana</span><span class="s num">$178.42 · <span class="pos">+4.10%</span></span></span>
+            <span class="r"><span class="tag tag-neutral">Авто · 5 мин</span><span class="s">3 мин назад</span></span>
+          </div>
+          <div class="row" style="cursor:default">
+            <span class="sym">LINK</span>
+            <span class="grow"><span class="t">Chainlink</span><span class="s num">$18.44 · <span class="pos">+2.21%</span></span></span>
+            <span class="r"><span class="tag tag-neutral">Авто · 5 мин</span><span class="s" style="color:var(--color-accent-300)">синхронизация…</span></span>
+          </div>
+          <div class="row" style="cursor:default">
+            <span class="sym">XRP</span>
+            <span class="grow"><span class="t">XRP</span><span class="s num">$0.6120 · +0.14%</span></span>
+            <span class="r"><span class="tag tag-outline">Вручную</span><span class="s neg">2 ч назад</span></span>
+          </div>
+          <div class="row" style="cursor:default">
+            <span class="sym">AVAX</span>
+            <span class="grow"><span class="t">Avalanche</span><span class="s num">$34.12 · <span class="neg">−1.05%</span></span></span>
+            <span class="r"><span class="tag tag-outline">Вручную</span><span class="s">18 мин назад</span></span>
+          </div>
+          <div class="row" style="cursor:default;opacity:.55">
+            <span class="sym">ARB</span>
+            <span class="grow"><span class="t">Arbitrum</span><span class="s num">$1.08</span></span>
+            <span class="r"><span class="tag tag-neutral">Пауза</span><span class="s">—</span></span>
+          </div>
+        </div>
+
+        <div class="table-wrap only-wide">
+          <table class="table">
+            <thead>
+              <tr><th>Монета</th><th>Цена</th><th>24ч</th><th>Режим обновления</th><th>Источник</th><th>Обновлено</th>
+                  <th style="text-align:right">Действие</th></tr>
+            </thead>
+            <tbody>
+              <tr style="cursor:default"><td>Bitcoin <span class="dim">BTC</span></td><td class="num">$64,912.40</td><td class="pos">+1.84%</td>
+                  <td><span class="tag tag-accent">Авто · 1 мин</span></td><td class="dim">Binance</td><td class="dim">12 с назад</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg></td></tr>
+              <tr style="cursor:default"><td>Ethereum <span class="dim">ETH</span></td><td class="num">$3,412.88</td><td class="neg">−0.62%</td>
+                  <td><span class="tag tag-accent">Авто · 1 мин</span></td><td class="dim">Binance</td><td class="dim">12 с назад</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg></td></tr>
+              <tr style="cursor:default"><td>Solana <span class="dim">SOL</span></td><td class="num">$178.42</td><td class="pos">+4.10%</td>
+                  <td><span class="tag tag-neutral">Авто · 5 мин</span></td><td class="dim">Coinbase</td><td class="dim">3 мин назад</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg></td></tr>
+              <tr style="cursor:default"><td>Chainlink <span class="dim">LINK</span></td><td class="num">$18.44</td><td class="pos">+2.21%</td>
+                  <td><span class="tag tag-neutral">Авто · 5 мин</span></td><td class="dim">Coinbase</td><td style="color:var(--color-accent-300)">синхронизация…</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#spinner"></use></svg></td></tr>
+              <tr style="cursor:default"><td>XRP <span class="dim">XRP</span></td><td class="num">$0.6120</td><td class="dim">+0.14%</td>
+                  <td><span class="tag tag-outline">Вручную</span></td><td class="dim">—</td><td class="neg">2 ч назад</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg></td></tr>
+              <tr style="cursor:default"><td>Avalanche <span class="dim">AVAX</span></td><td class="num">$34.12</td><td class="neg">−1.05%</td>
+                  <td><span class="tag tag-outline">Вручную</span></td><td class="dim">—</td><td class="dim">18 мин назад</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg></td></tr>
+              <tr style="cursor:default;opacity:.55"><td>Arbitrum <span class="dim">ARB</span></td><td class="num">$1.08</td><td class="dim">—</td>
+                  <td><span class="tag tag-neutral">Пауза</span></td><td class="dim">—</td><td class="dim">—</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#play"></use></svg></td></tr>
+              <tr style="cursor:default"><td>Tether <span class="dim">USDT</span></td><td class="num">$1.0002</td><td class="dim">0.00%</td>
+                  <td><span class="tag tag-accent">Авто · 1 мин</span></td><td class="dim">Binance</td><td class="dim">12 с назад</td>
+                  <td style="text-align:right"><svg class="ico" style="font-size:16px;color:var(--color-accent)" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Рыночный режим -->
+      <div class="panel" id="panel-market" hidden>
+        <div class="toolbar">
+          <div class="chips" role="tablist" aria-label="Фильтр рынка">
+            <button class="chip" role="tab" aria-selected="true">Все</button>
+            <button class="chip" role="tab" aria-selected="false">В портфелях</button>
+            <button class="chip" role="tab" aria-selected="false">Растут</button>
+            <button class="chip" role="tab" aria-selected="false">Стабильные</button>
+          </div>
+          <span class="spacer"></span>
+          <span class="hint">Цены обновлены 12 с назад</span>
+        </div>
+
+        <div class="rows">
+          <button class="row" data-goto="coin">
+            <span class="sym">BTC</span>
+            <span class="grow"><span class="t">Bitcoin</span><span class="s">BTC · в 2 портфелях</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 18 L9 14 L17 20 L26 10 L34 13 L43 6 L52 3" fill="none" stroke="#7fd6a2" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$64,912.40</span><span class="s pos">+1.84%</span></span>
+          </button>
+          <button class="row" data-goto="coin">
+            <span class="sym">ETH</span>
+            <span class="grow"><span class="t">Ethereum</span><span class="s">ETH · в 3 портфелях</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 8 L9 11 L17 7 L26 14 L34 12 L43 18 L52 16" fill="none" stroke="#e58a7d" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$3,412.88</span><span class="s neg">−0.62%</span></span>
+          </button>
+          <button class="row" data-goto="coin">
+            <span class="sym">SOL</span>
+            <span class="grow"><span class="t">Solana</span><span class="s">SOL · в 2 портфелях</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 20 L9 16 L17 17 L26 9 L34 11 L43 5 L52 2" fill="none" stroke="#7fd6a2" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$178.42</span><span class="s pos">+4.10%</span></span>
+          </button>
+          <button class="row" data-goto="coin">
+            <span class="sym">USDT</span>
+            <span class="grow"><span class="t">Tether</span><span class="s">USDT · расчётная</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 12 L9 12 L17 11 L26 12 L34 12 L43 13 L52 12" fill="none" stroke="#75798c" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$1.0002</span><span class="s dim">0.00%</span></span>
+          </button>
+          <button class="row" data-goto="coin">
+            <span class="sym">LINK</span>
+            <span class="grow"><span class="t">Chainlink</span><span class="s">LINK · в 1 портфеле</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 15 L9 17 L17 12 L26 13 L34 8 L43 10 L52 6" fill="none" stroke="#7fd6a2" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$18.44</span><span class="s pos">+2.21%</span></span>
+          </button>
+          <button class="row" data-goto="coin">
+            <span class="sym">AVAX</span>
+            <span class="grow"><span class="t">Avalanche</span><span class="s">AVAX</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 9 L9 12 L17 10 L26 15 L34 14 L43 19 L52 17" fill="none" stroke="#e58a7d" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$34.12</span><span class="s neg">−1.05%</span></span>
+          </button>
+          <button class="row" data-goto="coin">
+            <span class="sym">XRP</span>
+            <span class="grow"><span class="t">XRP</span><span class="s">XRP · цена вручную</span></span>
+            <svg class="chart-sm only-wide" viewBox="0 0 52 24" aria-hidden="true"><path d="M0 13 L9 13 L17 14 L26 12 L34 15 L43 14 L52 13" fill="none" stroke="#75798c" stroke-width="1.5"/></svg>
+            <span class="r"><span class="t num">$0.6120</span><span class="s dim">+0.14%</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════ История ════ -->
+    <section class="view" data-view="history" aria-label="История операций">
+      <div class="head">
+        <h1>История</h1>
+        <span class="spacer"></span>
+        <button class="btn btn-secondary" style="font-size:12px">Фильтр</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" role="tablist" aria-label="Тип операций">
+          <button class="chip" role="tab" aria-selected="true">Все</button>
+          <button class="chip" role="tab" aria-selected="false">Покупки</button>
+          <button class="chip" role="tab" aria-selected="false">Продажи</button>
+          <button class="chip" role="tab" aria-selected="false">Деньги</button>
+        </div>
+      </div>
+
+      <div class="group-label">Сегодня</div>
+      <div class="rows">
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-down-left"></use></svg></span>
+          <span class="grow"><span class="t">Покупка BTC</span><span class="s num">0.1500 @ $64,912.40 · Core Long</span></span>
+          <span class="r"><span class="t num">−$9,736.86</span><span class="s">09:41</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#bank"></use></svg></span>
+          <span class="grow"><span class="t">Ввод USD</span><span class="s">Банковский перевод ****4471 · Core Long</span></span>
+          <span class="r"><span class="t num pos">+$5,000.00</span><span class="s">09:12</span></span>
+        </div>
+      </div>
+
+      <div class="group-label">17 августа</div>
+      <div class="rows">
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right"></use></svg></span>
+          <span class="grow"><span class="t">Продажа AVAX</span><span class="s num">120.00 @ $34.55 · Alt Rotation</span></span>
+          <span class="r"><span class="t num pos">+$4,146.00</span><span class="s">18:22</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrows-left-right"></use></svg></span>
+          <span class="grow"><span class="t">Перевод SOL</span><span class="s num">40.00 · Alt Rotation → Core Long</span></span>
+          <span class="r"><span class="t num">$7,136.80</span><span class="s">15:04</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#arrow-down-left"></use></svg></span>
+          <span class="grow"><span class="t">Покупка LINK</span><span class="s num">240.00 @ $17.98 · Core Long</span></span>
+          <span class="r"><span class="t num">−$4,315.20</span><span class="s">11:47</span></span>
+        </div>
+        <div class="row" style="cursor:default">
+          <span class="sym sq"><svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#bank"></use></svg></span>
+          <span class="grow"><span class="t">Вывод USD</span><span class="s">Банковский перевод ****4471 · Yield Desk</span></span>
+          <span class="r"><span class="t num neg">−$2,000.00</span><span class="s">09:30</span></span>
+        </div>
+      </div>
+      <div style="height:var(--space-8)"></div>
+    </section>
+
+    <!-- ════ Настройки ════ -->
+    <section class="view" data-view="settings" aria-label="Настройки">
+      <div class="head"><h1>Настройки</h1></div>
+
+      <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <div class="card elev-sm" style="gap:var(--space-4);padding:var(--space-6)">
+          <span class="kicker">Профиль</span>
+          <div class="field"><label for="set-name">Имя</label><input class="input" id="set-name" value="o.botkov" readonly></div>
+          <div class="field"><label for="set-mail">Почта</label><input class="input" id="set-mail" value="you@wild-loop.online" readonly></div>
+          <div class="field">
+            <label>Базовая валюта</label>
+            <div class="tabs is-block" role="tablist" aria-label="Базовая валюта">
+              <button role="tab" aria-selected="true">USD</button>
+              <button role="tab" aria-selected="false">EUR</button>
+              <button role="tab" aria-selected="false">USDT</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card elev-sm" style="gap:var(--space-4);padding:var(--space-6)">
+          <span class="kicker">Синхронизация цен</span>
+          <div class="field">
+            <label>Интервал</label>
+            <div class="tabs is-block" role="tablist" aria-label="Интервал синхронизации">
+              <button role="tab" aria-selected="false">30 с</button>
+              <button role="tab" aria-selected="true">1 мин</button>
+              <button role="tab" aria-selected="false">5 мин</button>
+            </div>
+          </div>
+          <div style="display:flex;font-size:13px"><span class="dim">Источник по умолчанию</span><span style="margin-left:auto">Binance</span></div>
+          <div style="display:flex;font-size:13px"><span class="dim">Последняя синхронизация</span><span style="margin-left:auto" class="num">09:38:04</span></div>
+          <button class="btn btn-secondary btn-block">
+            <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#refresh"></use></svg>Обновить сейчас
+          </button>
+        </div>
+
+        <div class="card elev-sm" style="gap:var(--space-4);padding:var(--space-6)">
+          <span class="kicker">Безопасность</span>
+          <div style="display:flex;font-size:13px"><span class="dim">Двухфакторный вход</span><span style="margin-left:auto" class="tag tag-accent">Включён</span></div>
+          <div style="display:flex;font-size:13px"><span class="dim">Активные сессии</span><span style="margin-left:auto">2 устройства</span></div>
+          <a class="btn btn-secondary btn-block" href="/login.html">
+            <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#sign-out"></use></svg>Выйти
+          </a>
+        </div>
+      </div>
+      <div style="height:var(--space-8)"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ════ Плавающая кнопка и таб-бар: только на узком экране ════ -->
+<button class="btn btn-primary fab" data-open-sheet="sheet-trade" aria-label="Новая сделка">
+  <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#plus"></use></svg>
+</button>
+
+<nav class="tabbar" aria-label="Основная навигация">
+  <button data-goto="portfolios" data-nav="primary" aria-current="page">
+    <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#wallet"></use></svg>Портфели
+  </button>
+  <button data-goto="coins" data-nav="primary">
+    <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#coins"></use></svg>Монеты
+  </button>
+  <button data-goto="history" data-nav="primary">
+    <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#receipt"></use></svg>История
+  </button>
+  <button data-goto="settings" data-nav="primary">
+    <svg class="ico" aria-hidden="true"><use href="/assets/icons.svg#gear"></use></svg>Настройки
+  </button>
+</nav>
+
+<!-- ════ Шторки ════ -->
+<button class="scrim" data-scrim hidden aria-label="Закрыть панель"></button>
+
+<!-- Новая сделка -->
+<div class="sheet" id="sheet-trade" role="dialog" aria-modal="true" aria-label="Новая сделка" hidden>
+  <div class="grabber"></div>
+
+  <div class="sheet-head">
+    <span class="sheet-title">Новая сделка</span>
+    <span class="hint">Core Long</span>
+    <button class="btn btn-icon btn-secondary" style="border-color:transparent;margin-left:auto" data-close-sheet aria-label="Закрыть">
+      <svg class="ico" style="font-size:16px" aria-hidden="true"><use href="/assets/icons.svg#x"></use></svg>
+    </button>
+  </div>
+
+  <div style="padding:0 var(--space-6) var(--space-4)">
+    <div class="tabs is-block" role="tablist" aria-label="Тип операции">
+      <button role="tab" aria-selected="true" aria-controls="panel-trade">Покупка</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-trade">Продажа</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-cash">Ввод</button>
+      <button role="tab" aria-selected="false" aria-controls="panel-cash">Вывод</button>
+    </div>
+  </div>
+
+  <!-- Покупка и продажа -->
+  <div class="panel" id="panel-trade">
+    <div class="sheet-body">
+      <div class="field">
+        <label>Монета</label>
+        <div class="chips">
+          <button class="chip" aria-pressed="true">BTC</button>
+          <button class="chip" aria-pressed="false">ETH</button>
+          <button class="chip" aria-pressed="false">SOL</button>
+          <button class="chip" aria-pressed="false">LINK</button>
+          <button class="chip" style="background:transparent;border-color:var(--color-divider)">Поиск…</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Количество</label>
+        <div class="mock"><span class="big num">0.1500</span><span class="end num">BTC · ≈$9,736.86</span></div>
+      </div>
+
+      <div class="field">
+        <label>Цена за монету</label>
+        <div class="mock is-accent"><span class="num">64,912.40</span><span class="end accent">рынок · 12 с назад</span></div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:9px">
+          <label class="radio"><input type="radio" name="price" checked><span class="dot"></span>Использовать текущую цену</label>
+          <label class="radio"><input type="radio" name="price"><span class="dot"></span>Ввести свою цену</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Сумма сделки</label>
+        <div class="mock"><span class="num" style="font-size:17px">9,736.86</span><span class="end num">USDT · из остатка 14,208.10</span></div>
+      </div>
+
+      <div class="field">
+        <label>Оплата из</label>
+        <div class="chips">
+          <button class="chip" aria-pressed="false">Cash USD</button>
+          <button class="chip" aria-pressed="true">USDT</button>
+          <button class="chip" aria-pressed="false">SOL</button>
+          <button class="chip" aria-pressed="false">ETH</button>
+        </div>
+        <p class="hint" style="margin-top:6px">Обмен внутри портфеля: остаток USDT уменьшится, остаток BTC вырастет.</p>
+      </div>
+    </div>
+
+    <div class="sheet-foot">
+      <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--color-neutral-600)">
+        <svg class="ico" style="font-size:14px" aria-hidden="true"><use href="/assets/icons.svg#calendar"></use></svg>
+        18 авг 2026, 09:41
+        <button class="btn btn-ghost" style="font-size:11px;margin-left:auto">Изменить</button>
+      </div>
+      <div class="delta">
+        <div><span class="sym" style="width:20px;height:20px;font-size:8px">USDT</span><span class="dim">Остаток USDT</span>
+             <span class="v num">14,208.10 → <span class="neg">4,471.24</span></span></div>
+        <div><span class="sym" style="width:20px;height:20px;font-size:8px">BTC</span><span class="dim">Остаток BTC</span>
+             <span class="v num">1.2140 → <span class="pos">1.3640</span></span></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-secondary" style="flex:1;min-height:44px" data-close-sheet>Отмена</button>
+        <button class="btn btn-primary" style="flex:2;min-height:44px">Добавить сделку</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ввод и вывод денег -->
+  <div class="panel" id="panel-cash" hidden>
+    <div class="sheet-body">
+      <div style="text-align:center;padding-top:var(--space-4)">
+        <div class="hint">Ввод в Core Long</div>
+        <div class="num" style="font-family:var(--font-heading);font-weight:500;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin-top:8px">
+          $5,000<span class="dim">.00</span>
+        </div>
+        <div class="chips" style="justify-content:center;margin-top:12px">
+          <button class="chip" aria-pressed="false">$1,000</button>
+          <button class="chip" aria-pressed="true">$5,000</button>
+          <button class="chip" aria-pressed="false">$10,000</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Актив</label>
+        <div class="mock">
+          <span class="sym" style="width:24px;height:24px;font-size:9px">USD</span>
+          <span>Доллар США (кэш)</span>
+          <svg class="ico end" style="font-size:16px" aria-hidden="true"><use href="/assets/icons.svg#caret-down"></use></svg>
+        </div>
+        <p class="hint" style="margin-top:6px">Выберите монету, чтобы записать перевод в активе, а не в деньгах.</p>
+      </div>
+
+      <div class="field">
+        <label>Источник</label>
+        <div class="mock" style="min-height:40px">
+          <span>Банковский перевод · ****4471</span>
+          <svg class="ico end" style="font-size:16px" aria-hidden="true"><use href="/assets/icons.svg#caret-down"></use></svg>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Дата</label>
+        <div class="mock" style="min-height:40px">
+          <span>18 авг 2026</span>
+          <svg class="ico end" style="font-size:16px" aria-hidden="true"><use href="/assets/icons.svg#calendar"></use></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-foot">
+      <div class="delta">
+        <div><span class="dim">Свободные сейчас</span><span class="v num">$6,120.00</span></div>
+        <div><span class="dim">Свободные после</span><span class="v num pos">$11,120.00</span></div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-secondary" style="flex:1;min-height:44px" data-close-sheet>Отмена</button>
+        <button class="btn btn-primary" style="flex:2;min-height:44px">Записать ввод</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Новый портфель -->
+<div class="sheet" id="sheet-portfolio" role="dialog" aria-modal="true" aria-label="Новый портфель" hidden>
+  <div class="grabber"></div>
+  <div class="sheet-head">
+    <span class="sheet-title">Новый портфель</span>
+    <button class="btn btn-icon btn-secondary" style="border-color:transparent;margin-left:auto" data-close-sheet aria-label="Закрыть">
+      <svg class="ico" style="font-size:16px" aria-hidden="true"><use href="/assets/icons.svg#x"></use></svg>
+    </button>
+  </div>
+  <div class="sheet-body">
+    <div class="field">
+      <label for="np-name">Название</label>
+      <input class="input" id="np-name" placeholder="Core Long" style="min-height:42px">
+    </div>
+    <div class="field">
+      <label>Базовая валюта</label>
+      <div class="tabs is-block" role="tablist" aria-label="Базовая валюта портфеля">
+        <button role="tab" aria-selected="true">USD</button>
+        <button role="tab" aria-selected="false">EUR</button>
+        <button role="tab" aria-selected="false">USDT</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="np-cash">Начальные средства (необязательно)</label>
+      <input class="input" id="np-cash" placeholder="25 000.00" style="min-height:42px">
+    </div>
+  </div>
+  <div class="sheet-foot">
+    <button class="btn btn-primary btn-block" style="min-height:44px">Создать портфель</button>
+  </div>
+</div>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>
