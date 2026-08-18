@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WildEx — платформа учёта криптопортфеля</title>
+<meta name="description" content="WildEx — платформа для учёта сделок, портфелей и результата по криптоактивам.">
+<link rel="stylesheet" href="/assets/nocturne.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161826'/%3E%3Cpath d='M7 11l3.5 10L14 13l3.5 8L21 11' fill='none' stroke='%239184d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  .page { max-width: 1080px; margin: 0 auto; padding: 0 var(--space-8); }
+
+  .nav {
+    display: flex; align-items: center; gap: var(--space-4);
+    padding: var(--space-6) 0;
+    border-bottom: 1px solid var(--color-divider);
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: var(--space-3);
+    font-family: var(--font-heading); font-weight: 500; font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+  .nav-brand svg { width: 22px; height: 22px; }
+  .nav-status {
+    margin-left: auto; display: flex; align-items: center; gap: var(--space-2);
+    font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  }
+  .dot-live {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--color-accent-400);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
+  }
+
+  .hero { padding: calc(var(--space-8) * 3) 0 calc(var(--space-8) * 2); max-width: 720px; }
+  .hero h1 { font-size: clamp(38px, 6vw, 62px); margin-bottom: var(--space-6); }
+  .hero h1 .accent { color: var(--color-accent-300); }
+  .hero .lead {
+    font-size: 17px; max-width: 54ch;
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+  }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-accent-300); margin-bottom: var(--space-4);
+  }
+  .kicker::before {
+    content: ""; display: inline-block;
+    width: 24px; height: 1px; margin-right: var(--space-3);
+    vertical-align: middle; background: var(--color-accent-500);
+  }
+
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-8); }
+  .btn {
+    display: inline-flex; align-items: center; gap: var(--space-2);
+    font: inherit; font-size: 14px;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent; background: transparent;
+    color: var(--color-text); cursor: pointer; text-decoration: none;
+    transition: background-color .15s ease, border-color .15s ease;
+  }
+  .btn-primary { border-color: var(--color-accent-500); color: var(--color-accent-200); }
+  .btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 14%, transparent); }
+  .btn-primary:active { border-color: var(--color-accent-400); background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+  .btn-ghost { border-color: var(--color-neutral-800); color: var(--color-neutral-300); }
+  .btn-ghost:hover { background: color-mix(in srgb, var(--color-neutral-500) 12%, transparent); }
+  .btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+
+  .rule {
+    height: 1px; border: 0; margin: 0;
+    background: linear-gradient(90deg, transparent, var(--color-neutral-800) 48px, var(--color-neutral-800) calc(100% - 48px), transparent);
+  }
+
+  .grid {
+    display: grid; gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    padding: calc(var(--space-8) * 2) 0;
+  }
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+  .card-kicker {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-accent-300); margin-bottom: var(--space-3);
+  }
+  .card-title { font-size: 18px; margin-bottom: var(--space-2); }
+  .card-body {
+    font-size: 14px; margin: 0;
+    color: color-mix(in srgb, var(--color-text) 62%, transparent);
+  }
+
+  .meta {
+    display: flex; flex-wrap: wrap; gap: var(--space-6);
+    padding: var(--space-8) 0 calc(var(--space-8) * 2);
+    font-size: 12px;
+    color: color-mix(in srgb, var(--color-text) 45%, transparent);
+  }
+  .meta code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--color-neutral-400);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="nav">
+    <span class="nav-brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M5 10l4 12 4-9 4 9 4-12" fill="none" stroke="#9184d9" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M23 10h4v4" fill="none" stroke="#9184d9" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      WildEx
+    </span>
+    <span class="nav-status"><span class="dot-live"></span> Платформа развёрнута</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="kicker">Добро пожаловать</p>
+      <h1>Платформа <span class="accent">WildEx</span> — учёт криптопортфеля без таблиц</h1>
+      <p class="lead">
+        Сделки, портфели и реальный результат в одном месте. Сейчас вы видите первую
+        страницу платформы: инфраструктура поднята, домен привязан, автодеплой работает.
+        Дальше — рабочие экраны.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#modules">Что будет внутри</a>
+        <a class="btn btn-ghost" href="https://github.com/obotkov/crypto-crm">Репозиторий</a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="grid" id="modules">
+      <article class="card">
+        <p class="card-kicker">Портфели</p>
+        <h3 class="card-title">Несколько стратегий</h3>
+        <p class="card-body">Отдельные портфели под разные стратегии, с балансом и долями активов.</p>
+      </article>
+      <article class="card">
+        <p class="card-kicker">Сделки</p>
+        <h3 class="card-title">История операций</h3>
+        <p class="card-body">Покупки, продажи, вводы и выводы — с полной историей и средней ценой входа.</p>
+      </article>
+      <article class="card">
+        <p class="card-kicker">Монеты</p>
+        <h3 class="card-title">Рыночные данные</h3>
+        <p class="card-body">Котировки и синхронизация цен, чтобы оценка портфеля считалась сама.</p>
+      </article>
+      <article class="card">
+        <p class="card-kicker">Результат</p>
+        <h3 class="card-title">P&amp;L и аналитика</h3>
+        <p class="card-body">Прибыль по активам и по портфелю целиком — реализованная и бумажная.</p>
+      </article>
+    </section>
+
+    <hr class="rule">
+  </main>
+
+  <footer class="meta">
+    <span>WildEx · <code>wild-loop.online</code></span>
+    <span>Docker + Caddy · автодеплой из <code>main</code></span>
+    <span>Дизайн-система Nocturne</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

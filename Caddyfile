@@ -1,0 +1,39 @@
+{
+	email obotkov@gmail.com
+}
+
+# Продакшн-сайт. Caddy сам получает и продлевает сертификат Let's Encrypt
+# и редиректит http -> https для этого имени.
+wild-loop.online {
+	root * /srv/site
+	file_server
+	encode zstd gzip
+
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+
+	# Точка для проверки, что контейнер жив (используется в деплое).
+	respond /healthz 200 {
+		body "ok"
+	}
+
+	log {
+		output file /var/log/caddy/access.log {
+			roll_size 10MiB
+			roll_keep 5
+		}
+	}
+}
+
+# Обращения по IP или чужому имени — отдаём тот же сайт по http,
+# без попытки выписать на них сертификат.
+http:// {
+	root * /srv/site
+	file_server
+	respond /healthz 200 {
+		body "ok"
+	}
+}

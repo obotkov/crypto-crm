@@ -1,0 +1,66 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  DEPLOY_HOST: 89.110.92.149
+  DEPLOY_USER: root
+  DEPLOY_PATH: /opt/wildex
+  SITE_URL: https://wild-loop.online
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Настроить SSH-ключ
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          if [ -n "${{ secrets.DEPLOY_KNOWN_HOSTS }}" ]; then
+            echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          else
+            ssh-keyscan -H "$DEPLOY_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          fi
+          chmod 600 ~/.ssh/known_hosts
+          cat >> ~/.ssh/config <<EOF
+          Host deploy-target
+            HostName $DEPLOY_HOST
+            User $DEPLOY_USER
+            IdentityFile ~/.ssh/deploy_key
+            IdentitiesOnly yes
+          EOF
+
+      - name: Залить файлы на сервер
+        run: |
+          ssh deploy-target "mkdir -p $DEPLOY_PATH"
+          rsync -az --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'crypto-design' \
+            ./ "deploy-target:$DEPLOY_PATH/"
+
+      - name: Поднять контейнеры
+        run: |
+          ssh deploy-target "cd $DEPLOY_PATH && bash deploy/deploy.sh"
+
+      - name: Проверить, что сайт отвечает
+        run: |
+          for i in $(seq 1 10); do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 15 "$SITE_URL/healthz" || echo 000)
+            echo "Попытка $i: HTTP $code"
+            [ "$code" = "200" ] && exit 0
+            sleep 6
+          done
+          echo "Сайт не ответил 200 после деплоя"
+          ssh deploy-target "cd $DEPLOY_PATH && docker compose logs --tail 50 caddy"
+          exit 1
