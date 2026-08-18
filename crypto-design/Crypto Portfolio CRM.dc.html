@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="ds/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+body{margin:0;background:#0f1019;font-family:Inter,system-ui,sans-serif}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(255,255,255,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#e9e9ed;color:#161826;border-radius:4px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 Inter,system-ui,sans-serif;color:#e9e9ed}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(255,255,255,.1);color:#e9e9ed;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 Inter,system-ui,sans-serif;color:rgba(233,233,237,.55)}
+.dv-card{max-width:100%;border-radius:30px;overflow:hidden;box-shadow:0 0 0 1px #3f424d,0 18px 44px rgba(0,0,0,.55)}
+.dv-opt:target .dv-oid{background:#9184d9;color:#161826}
+.dv-next{margin:22px 0 0;font:12px/1.5 Inter,system-ui,sans-serif;color:rgba(233,233,237,.5)}
+a{color:#9184d9}a:hover{color:#b5abfc}
+</style></helmet>
+
+<section class="dv-turn" id="t5">
+<div class="dv-thd"><a class="dv-tid" href="#t5">5</a><span class="dv-tname">Десктопная версия — те же экраны на широком брейкпоинте</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="5a">
+<div class="dv-olabel"><a class="dv-oid" href="#5a">5a</a>Вход (десктоп) — на основе <a class="dv-oid" href="#3a">3a</a></div>
+<div class="dv-card" style="width:1280px">
+<div style="width:1280px;height:760px;overflow:hidden;background:#161826;color:#e9e9ed;display:grid;grid-template-columns:1fr 480px">
+  <div style="padding:56px 64px;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:15px"></i></span><span style="font-size:15px;font-weight:500">Ledgerdesk</span></div>
+    <h2 style="margin:auto 0 10px;max-width:440px">Учёт портфелей, сделок и цен в одном месте.</h2>
+    <p style="font-size:14px;color:#9397ab;max-width:420px;margin:0 0 auto">Синхронизация котировок по расписанию, ручное обновление в любой момент, история каждой сделки по каждой монете.</p>
+    <div style="display:flex;gap:44px;font-size:12px;color:#75798c"><span>42 монеты в системе</span><span>3 портфеля</span><span>последняя синхронизация 09:38</span></div>
+  </div>
+  <div style="background:#1b1d2b;padding:56px 48px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+    <h4 style="margin:0 0 6px">Вход</h4>
+    <button class="btn btn-secondary btn-block" style="min-height:44px;gap:10px;margin-top:0"><span style="width:20px;height:20px;border-radius:50%;background:#e9e9ed;color:#161826;font-size:12px;font-weight:600;display:grid;place-items:center">G</span>Продолжить с Google</button>
+    <div style="display:flex;align-items:center;gap:10px;font-size:11px;color:#595d6c;margin:6px 0"><span style="flex:1;height:1px;background:rgba(233,233,237,.12)"></span>или по почте<span style="flex:1;height:1px;background:rgba(233,233,237,.12)"></span></div>
+    <div class="field"><label>Почта</label><input class="input" style="min-height:42px" value="o.botkov@ledgerdesk.io" readonly=""></div>
+    <div class="field"><label>Пароль</label><input class="input" type="password" style="min-height:42px" value="oooooooooo" readonly=""></div>
+    <div style="display:flex;align-items:center;justify-content:space-between"><div><label class="radio"><input type="radio" name="keep5a" defaultChecked="{{ true }}"><span class="dot" style="border-color:#9184d9;background:#9184d9;box-shadow:inset 0 0 0 4px #1b1d2b"></span>Запомнить меня</label></div><a href="#3b" style="font-size:12px;text-decoration:none">Забыли пароль?</a></div>
+    <button class="btn btn-primary btn-block" style="min-height:44px">Войти</button>
+    <p style="font-size:11px;color:#595d6c;margin:6px 0 0">Двухфакторный код нужен на новых устройствах.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="5b">
+<div class="dv-olabel"><a class="dv-oid" href="#5b">5b</a>Портфели (десктоп) — на основе <a class="dv-oid" href="#1d">1d</a></div>
+<div class="dv-card" style="width:1280px">
+<div style="width:1280px;height:760px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex">
+  <div style="width:216px;flex:none;background:#1b1d2b;padding:18px 14px;display:flex;flex-direction:column;gap:3px">
+    <div style="display:flex;align-items:center;gap:9px;padding:0 6px 18px"><span style="width:24px;height:24px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:14px"></i></span><span style="font-size:14px;font-weight:500">Ledgerdesk</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;background:#2b2741;color:#d2cefd;font-size:13px"><i class="ph-fill ph-wallet" style="font-size:17px"></i>Портфели</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-coins" style="font-size:17px"></i>Монеты</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-receipt" style="font-size:17px"></i>История</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-gear" style="font-size:17px"></i>Настройки</div>
+    <div style="margin-top:auto;display:flex;align-items:center;gap:9px;padding:9px 8px;font-size:12px;color:#9397ab"><span style="width:26px;height:26px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">OB</span>o.botkov</div>
+  </div>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:14px;padding:16px 28px 12px"><div class="input" style="max-width:320px;display:flex;align-items:center;gap:8px;min-height:34px;color:#75798c"><i class="ph ph-magnifying-glass" style="font-size:14px"></i><span style="font-size:13px">Поиск портфеля или монеты</span></div><span style="margin-left:auto;font-size:11px;color:#75798c">Цены обновлены 12 с назад</span><button class="btn btn-primary" style="font-size:13px"><i class="ph ph-plus" style="font-size:14px"></i>Новый портфель</button></div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;padding:8px 28px 0">
+      <div class="card elev-sm" style="gap:4px;padding:16px 18px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Общий баланс</span><span style="font:500 34px/1.05 Inter,sans-serif;letter-spacing:-.025em">$184,392.18</span><span style="font-size:13px;color:#7fd6a2">+$3,181.44 · +1.76% за 24ч</span></div>
+      <div class="card elev-sm" style="gap:4px;padding:16px 18px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Свободные средства</span><span style="font:500 26px/1.1 Inter,sans-serif">$19,500.11</span><span style="font-size:12px;color:#75798c">в трёх портфелях</span></div>
+      <div class="card elev-sm" style="gap:4px;padding:16px 18px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">P&amp;L всего</span><span style="font:500 26px/1.1 Inter,sans-serif;color:#7fd6a2">+$16,704.90</span><span style="font-size:12px;color:#75798c">+9.96%</span></div>
+    </div>
+    <div style="padding:22px 28px 0;display:flex;align-items:baseline"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Портфели · 3</span><span style="margin-left:auto;font-size:11px;color:#9184d9">Сортировка: по стоимости</span></div>
+    <div style="padding:6px 20px 0">
+      <table class="table">
+        <thead><tr><th style="padding-left:8px">Название</th><th>Активы</th><th>Свободные</th><th style="text-align:right">Стоимость</th><th style="text-align:right;padding-right:8px">Изменение</th></tr></thead>
+        <tbody>
+          <tr><td style="padding-left:8px">Core Long</td><td style="color:#9397ab">5</td><td style="color:#9397ab">$6,120.00</td><td style="text-align:right">$112,480.55</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+20.2%</td></tr>
+          <tr><td style="padding-left:8px">Alt Rotation</td><td style="color:#9397ab">11</td><td style="color:#9397ab">$980.11</td><td style="text-align:right">$48,207.32</td><td style="text-align:right;padding-right:8px;color:#e58a7d">−4.8%</td></tr>
+          <tr><td style="padding-left:8px">Yield Desk</td><td style="color:#9397ab">4</td><td style="color:#9397ab">$12,400.00</td><td style="text-align:right">$23,704.31</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+2.1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="padding:22px 28px 0;display:flex;gap:14px">
+      <div class="card elev-sm" style="flex:2;gap:8px;padding:16px 18px">
+        <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Динамика общего баланса</span>
+        <svg viewBox="0 0 700 120" width="100%" height="120" preserveAspectRatio="none"><path d="M0 96 L58 88 L116 100 L175 74 L233 82 L291 58 L350 66 L408 44 L466 52 L525 30 L583 38 L641 20 L700 14" fill="none" stroke="#9184d9" stroke-width="2"></path></svg>
+        <div style="display:flex;gap:6px"><span class="tag tag-neutral" style="background:transparent;color:#9397ab">1W</span><span class="tag tag-neutral" style="background:transparent;box-shadow:inset 0 0 0 1px #9184d9;color:#9184d9">1M</span><span class="tag tag-neutral" style="background:transparent;color:#9397ab">1Y</span></div>
+      </div>
+      <div class="card elev-sm" style="flex:1;gap:7px;padding:16px 18px">
+        <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Распределение</span>
+        <div style="display:flex;gap:1px;border-radius:6px;overflow:hidden;height:6px"><span style="flex:61;background:#9184d9"></span><span style="flex:26;background:#796cbf"></span><span style="flex:13;background:#595d6c"></span></div>
+        <div style="display:flex;flex-direction:column;gap:5px;font-size:12px;color:#9397ab"><span>Core Long · 61%</span><span>Alt Rotation · 26%</span><span>Yield Desk · 13%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="5c">
+<div class="dv-olabel"><a class="dv-oid" href="#5c">5c</a>Портфель + сделка справа — на основе <a class="dv-oid" href="#1f">1f</a> и <a class="dv-oid" href="#1g">1g</a></div>
+<div class="dv-card" style="width:1280px">
+<div style="width:1280px;height:760px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex">
+  <div style="width:216px;flex:none;background:#1b1d2b;padding:18px 14px;display:flex;flex-direction:column;gap:3px">
+    <div style="display:flex;align-items:center;gap:9px;padding:0 6px 18px"><span style="width:24px;height:24px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:14px"></i></span><span style="font-size:14px;font-weight:500">Ledgerdesk</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;background:#2b2741;color:#d2cefd;font-size:13px"><i class="ph-fill ph-wallet" style="font-size:17px"></i>Портфели</div>
+    <div style="display:flex;flex-direction:column;gap:2px;padding:4px 0 4px 34px;font-size:12px"><span style="color:#e9e9ed">Core Long</span><span style="color:#75798c">Alt Rotation</span><span style="color:#75798c">Yield Desk</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-coins" style="font-size:17px"></i>Монеты</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-receipt" style="font-size:17px"></i>История</div>
+    <div style="margin-top:auto;display:flex;align-items:center;gap:9px;padding:9px 8px;font-size:12px;color:#9397ab"><span style="width:26px;height:26px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">OB</span>o.botkov</div>
+  </div>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;padding:18px 24px 0">
+    <div style="display:flex;align-items:baseline;gap:12px"><h4 style="margin:0">Core Long</h4><span style="font-size:12px;color:#75798c">USD · создан 14 июн 2026</span></div>
+    <div style="display:flex;gap:14px;margin-top:14px">
+      <div class="card elev-sm" style="flex:1;gap:3px;padding:14px 16px"><span style="font-size:11px;color:#75798c">Стоимость</span><span style="font:500 24px/1.1 Inter,sans-serif">$112,480.55</span></div>
+      <div class="card elev-sm" style="flex:1;gap:3px;padding:14px 16px"><span style="font-size:11px;color:#75798c">P&amp;L</span><span style="font:500 24px/1.1 Inter,sans-serif;color:#7fd6a2">+$18,904.22</span><span style="font-size:12px;color:#7fd6a2">+20.2%</span></div>
+      <div class="card elev-sm" style="flex:1;gap:3px;padding:14px 16px"><span style="font-size:11px;color:#75798c">Свободные</span><span style="font:500 24px/1.1 Inter,sans-serif">$6,120.00</span></div>
+      <div class="card elev-sm" style="flex:1;gap:3px;padding:14px 16px"><span style="font-size:11px;color:#75798c">Активы</span><span style="font:500 24px/1.1 Inter,sans-serif">5</span></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:14px">
+      <div class="card elev-sm" style="flex:2.2;gap:8px;padding:14px 16px">
+        <div style="display:flex;align-items:center"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Динамика</span><span style="margin-left:auto;display:flex;gap:6px"><span class="tag tag-neutral" style="background:transparent;color:#9397ab">1D</span><span class="tag tag-neutral" style="background:transparent;box-shadow:inset 0 0 0 1px #9184d9;color:#9184d9">1M</span><span class="tag tag-neutral" style="background:transparent;color:#9397ab">ALL</span></span></div>
+        <svg viewBox="0 0 480 150" width="100%" height="150" preserveAspectRatio="none">
+          <defs><linearGradient id="g5c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9184d9" stop-opacity=".3"></stop><stop offset="1" stop-color="#9184d9" stop-opacity="0"></stop></linearGradient></defs>
+          <path d="M0 118 L40 110 L80 124 L120 94 L160 102 L200 76 L240 86 L280 58 L320 66 L360 42 L400 50 L440 26 L480 18 L480 150 L0 150 Z" fill="url(#g5c)"></path>
+          <path d="M0 118 L40 110 L80 124 L120 94 L160 102 L200 76 L240 86 L280 58 L320 66 L360 42 L400 50 L440 26 L480 18" fill="none" stroke="#9184d9" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div class="card elev-sm" style="flex:1;gap:8px;padding:14px 16px;align-items:center">
+        <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c;align-self:flex-start">Распределение</span>
+        <svg viewBox="0 0 120 120" width="112" height="112" style="transform:rotate(-90deg)">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#232532" stroke-width="16"></circle>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#9184d9" stroke-width="16" stroke-dasharray="150 302"></circle>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#796cbf" stroke-width="16" stroke-dasharray="72 380" stroke-dashoffset="-152"></circle>
+          <circle cx="60" cy="60" r="48" fill="none" stroke="#b5abfc" stroke-width="16" stroke-dasharray="52 400" stroke-dashoffset="-226"></circle>
+        </svg>
+        <div style="align-self:stretch;display:flex;justify-content:space-between;font-size:11px;color:#9397ab"><span>BTC 33%</span><span>SOL 24%</span><span>ETH 17%</span></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:baseline;margin-top:18px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Монеты</span><span style="margin-left:auto;font-size:11px;color:#9184d9">Открыть монету для сделок</span></div>
+    <table class="table" style="margin-top:2px">
+      <thead><tr><th style="padding-left:8px">Монета</th><th>Количество</th><th>Средняя</th><th>Цена</th><th style="text-align:right">Стоимость</th><th style="text-align:right;padding-right:8px">24ч</th></tr></thead>
+      <tbody>
+        <tr><td style="padding-left:8px">Bitcoin <span style="color:#75798c">BTC</span></td><td>1.2140</td><td style="color:#9397ab">$52,110.00</td><td>$64,912.40</td><td style="text-align:right">$78,803.65</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+1.84%</td></tr>
+        <tr><td style="padding-left:8px">Solana <span style="color:#75798c">SOL</span></td><td>210.00</td><td style="color:#9397ab">$141.20</td><td>$178.42</td><td style="text-align:right">$37,468.20</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+4.10%</td></tr>
+        <tr><td style="padding-left:8px">Ethereum <span style="color:#75798c">ETH</span></td><td>8.4000</td><td style="color:#9397ab">$2,904.00</td><td>$3,412.88</td><td style="text-align:right">$28,668.19</td><td style="text-align:right;padding-right:8px;color:#e58a7d">−0.62%</td></tr>
+        <tr><td style="padding-left:8px">Chainlink <span style="color:#75798c">LINK</span></td><td>640.00</td><td style="color:#9397ab">$15.02</td><td>$18.44</td><td style="text-align:right">$11,801.60</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+2.21%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="width:360px;flex:none;background:#1b1d2b;box-shadow:-14px 0 34px rgba(0,0,0,.5);display:flex;flex-direction:column;padding:18px 20px 20px">
+    <div style="display:flex;align-items:center;gap:10px"><span style="font-size:15px;font-weight:500">Новая сделка</span><span style="font-size:11px;color:#75798c">Core Long</span><i class="ph ph-x" style="margin-left:auto;color:#9397ab"></i></div>
+    <div class="seg" style="width:100%;margin-top:14px"><label class="seg-opt" style="flex:1;justify-content:center;color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">Покупка</label><label class="seg-opt" style="flex:1;justify-content:center">Продажа</label><label class="seg-opt" style="flex:1;justify-content:center">Ввод</label><label class="seg-opt" style="flex:1;justify-content:center">Вывод</label></div>
+    <div style="display:flex;flex-direction:column;gap:11px;margin-top:16px">
+      <div class="field"><label>Монета</label><div class="input" style="display:flex;align-items:center;gap:9px;min-height:42px"><span style="width:22px;height:22px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:8px;color:#d2cefd">BTC</span><span style="font-size:14px">Bitcoin</span><i class="ph ph-caret-down" style="margin-left:auto;color:#75798c"></i></div></div>
+      <div class="field"><label>Количество</label><div class="input" style="display:flex;align-items:center;min-height:42px"><span style="font-size:17px">0.1500</span><span style="margin-left:auto;font-size:12px;color:#75798c">BTC</span></div></div>
+      <div class="field"><label>Цена</label><div class="input" style="display:flex;align-items:center;min-height:42px;box-shadow:inset 0 0 0 1px #9184d9"><span style="font-size:15px">64,912.40</span><span style="margin-left:auto;font-size:11px;color:#9184d9">рынок · 12 с</span></div></div>
+      <div class="field"><label>Сумма сделки</label><div class="input" style="display:flex;align-items:center;min-height:42px"><span style="font-size:15px">9,736.86</span><span style="margin-left:auto;font-size:12px;color:#75798c">USDT</span></div></div>
+      <div class="field"><label>Оплата из</label><div style="display:flex;gap:7px;flex-wrap:wrap"><span class="tag tag-neutral" style="padding:5px 11px">Cash USD</span><span class="tag" style="background:#2b2741;color:#d2cefd;box-shadow:inset 0 0 0 1px #9184d9;padding:5px 11px">USDT</span><span class="tag tag-neutral" style="padding:5px 11px">SOL</span></div></div>
+    </div>
+    <div style="margin-top:auto;border-radius:8px;background:#232532;padding:11px 12px;font-size:12px;display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex"><span style="color:#75798c">Остаток USDT</span><span style="margin-left:auto">14,208.10 → <span style="color:#e58a7d">4,471.24</span></span></div>
+      <div style="display:flex"><span style="color:#75798c">Остаток BTC</span><span style="margin-left:auto">1.2140 → <span style="color:#7fd6a2">1.3640</span></span></div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-secondary" style="flex:1;min-height:42px">Отмена</button><button class="btn btn-primary" style="flex:2;min-height:42px">Добавить</button></div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="5d">
+<div class="dv-olabel"><a class="dv-oid" href="#5d">5d</a>Монеты, режим синхронизации — на основе <a class="dv-oid" href="#1b">1b</a></div>
+<div class="dv-card" style="width:1280px">
+<div style="width:1280px;height:700px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex">
+  <div style="width:216px;flex:none;background:#1b1d2b;padding:18px 14px;display:flex;flex-direction:column;gap:3px">
+    <div style="display:flex;align-items:center;gap:9px;padding:0 6px 18px"><span style="width:24px;height:24px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:14px"></i></span><span style="font-size:14px;font-weight:500">Ledgerdesk</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-wallet" style="font-size:17px"></i>Портфели</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;background:#2b2741;color:#d2cefd;font-size:13px"><i class="ph-fill ph-coins" style="font-size:17px"></i>Монеты</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-receipt" style="font-size:17px"></i>История</div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-gear" style="font-size:17px"></i>Настройки</div>
+    <div style="margin-top:auto;display:flex;align-items:center;gap:9px;padding:9px 8px;font-size:12px;color:#9397ab"><span style="width:26px;height:26px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">OB</span>o.botkov</div>
+  </div>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;padding:18px 24px 0">
+    <div style="display:flex;align-items:center;gap:14px"><h4 style="margin:0">Монеты</h4><span style="font-size:12px;color:#75798c">42 загружено · полная синхронизация 09:38:04 · следующая через 4:22</span><button class="btn btn-primary" style="margin-left:auto;font-size:13px"><i class="ph ph-arrows-clockwise" style="font-size:14px"></i>Обновить сейчас</button></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:14px">
+      <div class="seg"><label class="seg-opt" style="color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">Все</label><label class="seg-opt">Авто</label><label class="seg-opt">Вручную</label><label class="seg-opt">Отключены</label></div>
+      <div class="input" style="max-width:280px;display:flex;align-items:center;gap:8px;min-height:34px;color:#75798c"><i class="ph ph-magnifying-glass" style="font-size:14px"></i><span style="font-size:13px">Символ или название</span></div>
+      <span style="margin-left:auto;font-size:11px;color:#75798c">Выбрано: 0</span>
+      <button class="btn btn-secondary" style="font-size:12px">Сменить режим</button>
+    </div>
+    <table class="table" style="margin-top:14px">
+      <thead><tr><th style="padding-left:8px">Монета</th><th>Цена</th><th>24ч</th><th>Режим обновления</th><th>Источник</th><th>Обновлено</th><th style="text-align:right;padding-right:8px">Действие</th></tr></thead>
+      <tbody>
+        <tr><td style="padding-left:8px">Bitcoin <span style="color:#75798c">BTC</span></td><td>$64,912.40</td><td style="color:#7fd6a2">+1.84%</td><td><span class="tag tag-accent">Авто · 1 мин</span></td><td style="color:#9397ab">Binance</td><td style="color:#9397ab">12 с назад</td><td style="text-align:right;padding-right:8px"><i class="ph ph-arrows-clockwise" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px">Ethereum <span style="color:#75798c">ETH</span></td><td>$3,412.88</td><td style="color:#e58a7d">−0.62%</td><td><span class="tag tag-accent">Авто · 1 мин</span></td><td style="color:#9397ab">Binance</td><td style="color:#9397ab">12 с назад</td><td style="text-align:right;padding-right:8px"><i class="ph ph-arrows-clockwise" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px">Solana <span style="color:#75798c">SOL</span></td><td>$178.42</td><td style="color:#7fd6a2">+4.10%</td><td><span class="tag tag-neutral">Авто · 5 мин</span></td><td style="color:#9397ab">Coinbase</td><td style="color:#9397ab">3 мин назад</td><td style="text-align:right;padding-right:8px"><i class="ph ph-arrows-clockwise" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px">Chainlink <span style="color:#75798c">LINK</span></td><td>$18.44</td><td style="color:#7fd6a2">+2.21%</td><td><span class="tag tag-neutral">Авто · 5 мин</span></td><td style="color:#9397ab">Coinbase</td><td style="color:#9184d9">синхронизация…</td><td style="text-align:right;padding-right:8px"><i class="ph ph-circle-notch" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px">XRP <span style="color:#75798c">XRP</span></td><td>$0.6120</td><td style="color:#9397ab">+0.14%</td><td><span class="tag tag-outline">Вручную</span></td><td style="color:#9397ab">—</td><td style="color:#e58a7d">2 ч назад</td><td style="text-align:right;padding-right:8px"><i class="ph ph-arrows-clockwise" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px">Avalanche <span style="color:#75798c">AVAX</span></td><td>$34.12</td><td style="color:#e58a7d">−1.05%</td><td><span class="tag tag-outline">Вручную</span></td><td style="color:#9397ab">—</td><td style="color:#9397ab">18 мин назад</td><td style="text-align:right;padding-right:8px"><i class="ph ph-arrows-clockwise" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px;opacity:.55">Arbitrum <span style="color:#75798c">ARB</span></td><td style="opacity:.55">$1.08</td><td style="color:#9397ab;opacity:.55">—</td><td><span class="tag tag-neutral" style="opacity:.6">Пауза</span></td><td style="color:#9397ab">—</td><td style="color:#595d6c">—</td><td style="text-align:right;padding-right:8px"><i class="ph ph-play" style="color:#9184d9"></i></td></tr>
+        <tr><td style="padding-left:8px">Tether <span style="color:#75798c">USDT</span></td><td>$1.0002</td><td style="color:#9397ab">0.00%</td><td><span class="tag tag-accent">Авто · 1 мин</span></td><td style="color:#9397ab">Binance</td><td style="color:#9397ab">12 с назад</td><td style="text-align:right;padding-right:8px"><i class="ph ph-arrows-clockwise" style="color:#9184d9"></i></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="5e">
+<div class="dv-olabel"><a class="dv-oid" href="#5e">5e</a>Монета и её сделки — на основе <a class="dv-oid" href="#4a">4a</a></div>
+<div class="dv-card" style="width:1280px">
+<div style="width:1280px;height:700px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex">
+  <div style="width:216px;flex:none;background:#1b1d2b;padding:18px 14px;display:flex;flex-direction:column;gap:3px">
+    <div style="display:flex;align-items:center;gap:9px;padding:0 6px 18px"><span style="width:24px;height:24px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:14px"></i></span><span style="font-size:14px;font-weight:500">Ledgerdesk</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;background:#2b2741;color:#d2cefd;font-size:13px"><i class="ph-fill ph-wallet" style="font-size:17px"></i>Портфели</div>
+    <div style="display:flex;flex-direction:column;gap:2px;padding:4px 0 4px 34px;font-size:12px"><span style="color:#e9e9ed">Core Long</span><span style="color:#75798c">Alt Rotation</span><span style="color:#75798c">Yield Desk</span></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:9px 10px;font-size:13px;color:#9397ab"><i class="ph ph-coins" style="font-size:17px"></i>Монеты</div>
+    <div style="margin-top:auto;display:flex;align-items:center;gap:9px;padding:9px 8px;font-size:12px;color:#9397ab"><span style="width:26px;height:26px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">OB</span>o.botkov</div>
+  </div>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;padding:18px 24px 0">
+    <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:#75798c">Портфели<i class="ph ph-caret-right" style="font-size:11px"></i>Core Long<i class="ph ph-caret-right" style="font-size:11px"></i><span style="color:#e9e9ed">Bitcoin</span></div>
+    <div style="display:flex;align-items:flex-end;gap:16px;margin-top:12px">
+      <span style="width:34px;height:34px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">BTC</span>
+      <div><div style="font-size:11px;color:#75798c">В портфеле</div><div style="font:500 28px/1.1 Inter,sans-serif;letter-spacing:-.02em">$78,803.65</div></div>
+      <div style="font-size:13px;color:#9397ab;padding-bottom:4px">1.2140 BTC · средняя $52,110.00</div>
+      <div style="font-size:13px;color:#7fd6a2;padding-bottom:4px">+$15,547.51 (+24.6%)</div>
+      <div style="margin-left:auto;display:flex;gap:8px"><button class="btn btn-secondary" style="font-size:13px">Продать</button><button class="btn btn-primary" style="font-size:13px"><i class="ph ph-plus" style="font-size:13px"></i>Сделка</button></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:16px">
+      <div class="card elev-sm" style="flex:2.4;gap:8px;padding:14px 16px">
+        <div style="display:flex;align-items:center"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Цена BTC</span><span style="margin-left:auto;font-size:13px">$64,912.40 <span style="color:#7fd6a2">+1.84%</span></span></div>
+        <svg viewBox="0 0 560 140" width="100%" height="140" preserveAspectRatio="none">
+          <defs><linearGradient id="g5e" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9184d9" stop-opacity=".28"></stop><stop offset="1" stop-color="#9184d9" stop-opacity="0"></stop></linearGradient></defs>
+          <path d="M0 112 L47 104 L93 118 L140 88 L187 96 L233 72 L280 80 L327 54 L373 62 L420 38 L467 46 L513 24 L560 16 L560 140 L0 140 Z" fill="url(#g5e)"></path>
+          <path d="M0 112 L47 104 L93 118 L140 88 L187 96 L233 72 L280 80 L327 54 L373 62 L420 38 L467 46 L513 24 L560 16" fill="none" stroke="#9184d9" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div class="card elev-sm" style="flex:1;gap:9px;padding:14px 16px;font-size:13px">
+        <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Позиция</span>
+        <div style="display:flex"><span style="color:#75798c">Куплено</span><span style="margin-left:auto">1.4640 BTC</span></div>
+        <div style="display:flex"><span style="color:#75798c">Продано</span><span style="margin-left:auto">0.2500 BTC</span></div>
+        <div style="display:flex"><span style="color:#75798c">Реализованный P&amp;L</span><span style="margin-left:auto;color:#7fd6a2">+$2,273.50</span></div>
+        <div style="display:flex"><span style="color:#75798c">Нереализованный</span><span style="margin-left:auto;color:#7fd6a2">+$15,547.51</span></div>
+        <div style="display:flex"><span style="color:#75798c">Доля портфеля</span><span style="margin-left:auto">33%</span></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:baseline;margin-top:18px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Сделки по BTC · 5</span><div style="margin-left:auto;display:flex;gap:6px"><span class="tag tag-neutral" style="box-shadow:inset 0 0 0 1px #9184d9;background:transparent;color:#9184d9">Все</span><span class="tag tag-neutral">Покупки</span><span class="tag tag-neutral">Продажи</span><span class="tag tag-neutral">Переводы</span></div></div>
+    <table class="table" style="margin-top:2px">
+      <thead><tr><th style="padding-left:8px">Дата</th><th>Тип</th><th>Количество</th><th>Цена</th><th>Оплата</th><th style="text-align:right">Сумма</th><th style="text-align:right;padding-right:8px">P&amp;L</th></tr></thead>
+      <tbody>
+        <tr><td style="padding-left:8px">18 авг 09:41</td><td>Покупка</td><td>0.1500</td><td>$64,912.40</td><td style="color:#9397ab">USDT</td><td style="text-align:right">−$9,736.86</td><td style="text-align:right;padding-right:8px;color:#9397ab">+0.0%</td></tr>
+        <tr><td style="padding-left:8px">02 авг 14:10</td><td>Продажа</td><td>0.2500</td><td>$61,204.00</td><td style="color:#9397ab">Cash USD</td><td style="text-align:right;color:#7fd6a2">+$15,301.00</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+18.4%</td></tr>
+        <tr><td style="padding-left:8px">21 июл 11:02</td><td>Покупка</td><td>0.4000</td><td>$57,880.15</td><td style="color:#9397ab">USDT</td><td style="text-align:right">−$23,152.06</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+12.1%</td></tr>
+        <tr><td style="padding-left:8px">09 июл 15:04</td><td>Перевод</td><td>0.3140</td><td style="color:#9397ab">—</td><td style="color:#9397ab">из Alt Rotation</td><td style="text-align:right">$20,382.49</td><td style="text-align:right;padding-right:8px;color:#9397ab">—</td></tr>
+        <tr><td style="padding-left:8px">14 июн 10:26</td><td>Покупка</td><td>0.6000</td><td>$48,204.90</td><td style="color:#9397ab">Cash USD</td><td style="text-align:right">−$28,922.94</td><td style="text-align:right;padding-right:8px;color:#7fd6a2">+34.7%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Можно дальше: «показать планшетный брейкпоинт 1024» · «сделать сделку модальным окном вместо панели в <a class="dv-oid" href="#5c">5c</a>» · «добавить десктопные экраны истории и настроек»</p>
+</section>
+
+<section class="dv-turn" id="t4">
+<div class="dv-thd"><a class="dv-tid" href="#t4">4</a><span class="dv-tname">Страница монеты — открывается по нажатию на актив в <a class="dv-oid" href="#1f">1f</a></span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="4a">
+<div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>Монета в портфеле + все сделки</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column;position:relative">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 14px 4px"><button class="btn btn-icon btn-secondary" style="border-color:transparent"><i class="ph ph-arrow-left" style="font-size:18px"></i></button><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">BTC</span><span style="font-size:14px;font-weight:500">Bitcoin</span><span style="font-size:11px;color:#75798c">Core Long</span><button class="btn btn-icon btn-secondary" style="margin-left:auto;border-color:transparent"><i class="ph ph-dots-three-vertical" style="font-size:18px"></i></button></div>
+
+  <div style="padding:8px 18px 0">
+    <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">В портфеле</div>
+    <div style="display:flex;align-items:baseline;gap:10px;margin-top:4px"><span style="font:500 28px/1.1 Inter,sans-serif;letter-spacing:-.02em">$78,803.65</span><span style="font-size:13px;color:#9397ab">1.2140 BTC</span></div>
+    <div style="display:flex;gap:14px;margin-top:7px;font-size:12px"><span style="color:#7fd6a2">+$15,547.51 (+24.6%)</span><span style="color:#75798c">средняя $52,110.00</span></div>
+  </div>
+
+  <div style="margin:12px 18px 0;height:104px;position:relative">
+    <svg viewBox="0 0 354 104" width="100%" height="104" preserveAspectRatio="none">
+      <defs><linearGradient id="g4a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9184d9" stop-opacity=".3"></stop><stop offset="1" stop-color="#9184d9" stop-opacity="0"></stop></linearGradient></defs>
+      <path d="M0 82 L30 76 L60 88 L90 62 L120 70 L150 50 L180 58 L210 38 L240 46 L270 28 L300 34 L330 18 L354 14 L354 104 L0 104 Z" fill="url(#g4a)"></path>
+      <path d="M0 82 L30 76 L60 88 L90 62 L120 70 L150 50 L180 58 L210 38 L240 46 L270 28 L300 34 L330 18 L354 14" fill="none" stroke="#9184d9" stroke-width="2"></path>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:6px;padding:8px 18px 0">
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1D</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1W</span>
+    <span class="tag tag-neutral" style="background:transparent;box-shadow:inset 0 0 0 1px #9184d9;color:#9184d9">1M</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">ALL</span>
+    <span style="margin-left:auto;font-size:12px">$64,912.40 <span style="color:#7fd6a2">+1.84%</span></span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin:14px 18px 0;background:#2b2d3a;border-radius:8px;overflow:hidden">
+    <div style="background:#232532;padding:9px 10px"><div style="font-size:10px;color:#75798c">Куплено</div><div style="font-size:14px">1.4640</div></div>
+    <div style="background:#232532;padding:9px 10px"><div style="font-size:10px;color:#75798c">Продано</div><div style="font-size:14px">0.2500</div></div>
+    <div style="background:#232532;padding:9px 10px"><div style="font-size:10px;color:#75798c">Доля</div><div style="font-size:14px">33%</div></div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px 2px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Сделки по BTC · 5</span><span style="font-size:11px;color:#9184d9">Экспорт</span></div>
+  <div style="flex:1;overflow:hidden;padding:0 18px">
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="width:26px;height:26px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-down-left" style="font-size:13px"></i></span><div style="flex:1"><div style="font-size:13px">Покупка 0.1500</div><div style="font-size:11px;color:#75798c">18 авг 09:41 · $64,912.40</div></div><div style="text-align:right"><div style="font-size:13px">−$9,736.86</div><div style="font-size:11px;color:#7fd6a2">+0.0%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="width:26px;height:26px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-up-right" style="font-size:13px"></i></span><div style="flex:1"><div style="font-size:13px">Продажа 0.2500</div><div style="font-size:11px;color:#75798c">02 авг 14:10 · $61,204.00</div></div><div style="text-align:right"><div style="font-size:13px;color:#7fd6a2">+$15,301.00</div><div style="font-size:11px;color:#7fd6a2">+18.4%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="width:26px;height:26px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-down-left" style="font-size:13px"></i></span><div style="flex:1"><div style="font-size:13px">Покупка 0.4000</div><div style="font-size:11px;color:#75798c">21 июл 11:02 · $57,880.15</div></div><div style="text-align:right"><div style="font-size:13px">−$23,152.06</div><div style="font-size:11px;color:#7fd6a2">+12.1%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="width:26px;height:26px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrows-left-right" style="font-size:13px"></i></span><div style="flex:1"><div style="font-size:13px">Перевод 0.3140</div><div style="font-size:11px;color:#75798c">09 июл 15:04 · из Alt Rotation</div></div><div style="text-align:right"><div style="font-size:13px">$20,382.49</div><div style="font-size:11px;color:#75798c">—</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 0"><span style="width:26px;height:26px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-down-left" style="font-size:13px"></i></span><div style="flex:1"><div style="font-size:13px">Покупка 0.6000</div><div style="font-size:11px;color:#75798c">14 июн 10:26 · $48,204.90</div></div><div style="text-align:right"><div style="font-size:13px">−$28,922.94</div><div style="font-size:11px;color:#7fd6a2">+34.7%</div></div></div>
+  </div>
+
+  <div style="display:flex;gap:8px;padding:10px 18px 14px;border-top:1px solid rgba(233,233,237,.08)"><button class="btn btn-secondary" style="flex:1;min-height:42px">Продать</button><button class="btn btn-primary" style="flex:1;min-height:42px"><i class="ph ph-plus" style="font-size:14px"></i>Сделка</button></div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Можно дальше: «добавить фильтр покупки/продажи в сделках» · «показать нереализованный и реализованный P&amp;L отдельно» · «сделать сделки раскрывающимися с деталями»</p>
+</section>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Первый экран — вход через Gmail или почту</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Вход — Gmail первым, почта рядом</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+
+  <div style="padding:84px 26px 0">
+    <span style="width:38px;height:38px;border-radius:10px;box-shadow:inset 0 0 0 1px #9184d9;display:inline-grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:20px"></i></span>
+    <h3 style="margin:26px 0 8px">Ledgerdesk</h3>
+    <p style="font-size:13px;color:#9397ab;margin:0;max-width:270px">Учёт портфелей и сделок. Войдите рабочим аккаунтом Google или по почте.</p>
+  </div>
+
+  <div style="padding:34px 26px 0;display:flex;flex-direction:column;gap:10px">
+    <button class="btn btn-secondary btn-block" style="min-height:46px;gap:10px;margin-top:0"><span style="width:20px;height:20px;border-radius:50%;background:#e9e9ed;color:#161826;font-size:12px;font-weight:600;display:grid;place-items:center">G</span>Продолжить с Google</button>
+    <div style="font-size:11px;color:#595d6c;padding-left:2px">Разрешены домены ledgerdesk.io и gmail.com</div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:10px;font-size:11px;color:#595d6c;padding:22px 26px 0"><span style="flex:1;height:1px;background:rgba(233,233,237,.12)"></span>или по почте<span style="flex:1;height:1px;background:rgba(233,233,237,.12)"></span></div>
+
+  <div style="padding:18px 26px 0;display:flex;flex-direction:column;gap:12px">
+    <div class="field"><label>Почта</label><input class="input" style="min-height:44px" value="o.botkov@ledgerdesk.io" readonly=""></div>
+    <div class="field"><label>Пароль</label>
+      <div style="position:relative"><input class="input" type="password" style="min-height:44px;padding-right:38px" value="oooooooooo" readonly=""><i class="ph ph-eye" style="position:absolute;right:11px;top:13px;color:#75798c"></i></div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div><label class="radio"><input type="radio" name="keep3a" defaultChecked="{{ true }}"><span class="dot" style="border-color:#9184d9;background:#9184d9;box-shadow:inset 0 0 0 4px #161826"></span>Запомнить меня</label></div>
+      <a href="#3b" style="font-size:12px;text-decoration:none">Забыли пароль?</a>
+    </div>
+    <button class="btn btn-primary btn-block" style="min-height:46px">Войти</button>
+  </div>
+
+  <p style="margin:auto 26px 22px;font-size:11px;color:#595d6c">Нет доступа? Запросите его у администратора деска.</p>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>Код из письма (после ввода почты)</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:12px 14px 0"><button class="btn btn-icon btn-secondary" style="border-color:transparent"><i class="ph ph-arrow-left" style="font-size:18px"></i></button></div>
+
+  <div style="padding:44px 26px 0">
+    <span style="width:38px;height:38px;border-radius:10px;box-shadow:inset 0 0 0 1px #3f424d;display:inline-grid;place-items:center;color:#9184d9"><i class="ph ph-envelope-simple" style="font-size:19px"></i></span>
+    <h4 style="margin:22px 0 8px">Проверьте почту</h4>
+    <p style="font-size:13px;color:#9397ab;margin:0">Код из шести цифр отправлен на <span style="color:#e9e9ed">o.botkov@ledgerdesk.io</span></p>
+  </div>
+
+  <div style="display:flex;gap:8px;padding:28px 26px 0">
+    <span style="flex:1;height:52px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d;display:grid;place-items:center;font-size:20px">4</span>
+    <span style="flex:1;height:52px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d;display:grid;place-items:center;font-size:20px">7</span>
+    <span style="flex:1;height:52px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d;display:grid;place-items:center;font-size:20px">1</span>
+    <span style="flex:1;height:52px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;font-size:20px;color:#9184d9">2</span>
+    <span style="flex:1;height:52px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d"></span>
+    <span style="flex:1;height:52px;border-radius:8px;background:#232532;box-shadow:inset 0 0 0 1px #3f424d"></span>
+  </div>
+  <div style="padding:14px 26px 0;font-size:12px;color:#75798c">Отправить снова можно через 0:42</div>
+  <div style="padding:22px 26px 0"><button class="btn btn-primary btn-block" style="min-height:46px">Подтвердить</button></div>
+  <div style="padding:12px 26px 0"><button class="btn btn-ghost" style="font-size:12px;padding-left:0">Войти через Google вместо этого</button></div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Можно дальше: «убрать пароль, оставить только код» · «сделать <a class="dv-oid" href="#3a">3a</a> с логотипом по центру» · «добавить 2FA-экран»</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Variations — portfolio detail &amp; add-trade</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Detail — chart-forward (alt to <a class="dv-oid" href="#1f">1f</a>)</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:12px 14px 8px"><button class="btn btn-icon btn-secondary" style="border-color:transparent"><i class="ph ph-arrow-left" style="font-size:18px"></i></button><span style="font-size:14px;font-weight:500">Core Long</span><button class="btn btn-icon btn-secondary" style="margin-left:auto;border-color:transparent"><i class="ph ph-dots-three-vertical" style="font-size:18px"></i></button></div>
+
+  <div style="padding:0 18px">
+    <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Total value</div>
+    <div style="display:flex;align-items:baseline;gap:10px;margin-top:4px"><span style="font:500 34px/1 Inter,sans-serif;letter-spacing:-.02em">$112,480.55</span></div>
+    <div style="display:flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;color:#7fd6a2"><i class="ph-fill ph-caret-up" style="font-size:12px"></i>+$18,904.22 <span style="color:#75798c">(+20.2% all time)</span></div>
+  </div>
+
+  <div style="margin-top:14px;position:relative;height:230px">
+    <svg viewBox="0 0 390 230" width="390" height="230" preserveAspectRatio="none">
+      <defs><linearGradient id="g2a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9184d9" stop-opacity=".38"></stop><stop offset="1" stop-color="#9184d9" stop-opacity="0"></stop></linearGradient></defs>
+      <path d="M0 176 L26 168 L52 182 L78 150 L104 158 L130 126 L156 138 L182 104 L208 116 L234 82 L260 92 L286 64 L312 74 L338 44 L364 52 L390 30 L390 230 L0 230 Z" fill="url(#g2a)"></path>
+      <path d="M0 176 L26 168 L52 182 L78 150 L104 158 L130 126 L156 138 L182 104 L208 116 L234 82 L260 92 L286 64 L312 74 L338 44 L364 52 L390 30" fill="none" stroke="#9184d9" stroke-width="2"></path>
+      <circle cx="286" cy="64" r="4" fill="#161826" stroke="#b5abfc" stroke-width="2"></circle>
+    </svg>
+    <div style="position:absolute;left:246px;top:12px;background:#232532;box-shadow:0 0 0 1px #3f424d;border-radius:8px;padding:6px 9px;font-size:11px;line-height:1.35"><div style="color:#75798c">12 Aug</div><div style="font-weight:500">$106,220.10</div></div>
+  </div>
+
+  <div style="display:flex;gap:6px;padding:6px 18px 0">
+    <span class="tag tag-neutral" style="background:transparent;box-shadow:inset 0 0 0 1px #9184d9;color:#9184d9">1D</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1W</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1M</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1Y</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">ALL</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin:16px 18px 0;background:#2b2d3a;border-radius:8px;overflow:hidden">
+    <div style="background:#232532;padding:9px 10px"><div style="font-size:10px;color:#75798c">Cash</div><div style="font-size:14px">$6,120.00</div></div>
+    <div style="background:#232532;padding:9px 10px"><div style="font-size:10px;color:#75798c">Invested</div><div style="font-size:14px">$93,576.33</div></div>
+    <div style="background:#232532;padding:9px 10px"><div style="font-size:10px;color:#75798c">Assets</div><div style="font-size:14px">5</div></div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px 6px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Holdings</span><span style="font-size:11px;color:#9184d9">Allocation</span></div>
+  <div style="display:flex;flex-direction:column;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">BTC</span><div style="flex:1;min-width:0"><div style="font-size:13px">Bitcoin</div><div style="font-size:11px;color:#75798c">1.2140 · avg $52,110</div></div><div style="text-align:right"><div style="font-size:13px">$78,803.65</div><div style="font-size:11px;color:#7fd6a2">+1.84%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">ETH</span><div style="flex:1;min-width:0"><div style="font-size:13px">Ethereum</div><div style="font-size:11px;color:#75798c">8.4000 · avg $2,904</div></div><div style="text-align:right"><div style="font-size:13px">$28,668.19</div><div style="font-size:11px;color:#e58a7d">−0.62%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">SOL</span><div style="flex:1;min-width:0"><div style="font-size:13px">Solana</div><div style="font-size:11px;color:#75798c">210.00 · avg $141.20</div></div><div style="text-align:right"><div style="font-size:13px">$37,468.20</div><div style="font-size:11px;color:#7fd6a2">+4.10%</div></div></div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Detail — allocation-forward</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:12px 14px 8px"><button class="btn btn-icon btn-secondary" style="border-color:transparent"><i class="ph ph-arrow-left" style="font-size:18px"></i></button><span style="font-size:14px;font-weight:500">Core Long</span><span class="tag tag-accent" style="margin-left:auto">Live</span></div>
+
+  <div style="display:flex;align-items:center;gap:16px;padding:6px 18px 0">
+    <svg viewBox="0 0 120 120" width="120" height="120" style="flex:none;transform:rotate(-90deg)">
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#232532" stroke-width="16"></circle>
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#9184d9" stroke-width="16" stroke-dasharray="150 302" stroke-linecap="butt"></circle>
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#796cbf" stroke-width="16" stroke-dasharray="72 380" stroke-dashoffset="-152"></circle>
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#b5abfc" stroke-width="16" stroke-dasharray="52 400" stroke-dashoffset="-226"></circle>
+      <circle cx="60" cy="60" r="48" fill="none" stroke="#595d6c" stroke-width="16" stroke-dasharray="26 426" stroke-dashoffset="-280"></circle>
+    </svg>
+    <div style="flex:1;min-width:0">
+      <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Total value</div>
+      <div style="font:500 26px/1.1 Inter,sans-serif;letter-spacing:-.02em;margin-top:2px">$112,480.55</div>
+      <div style="font-size:12px;color:#7fd6a2;margin-top:4px">+$18,904.22 · +20.2%</div>
+      <div style="font-size:11px;color:#75798c;margin-top:6px">Cash $6,120.00</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;padding:14px 18px 0;font-size:12px">
+    <div style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;border-radius:2px;background:#9184d9"></span>BTC <span style="margin-left:auto;color:#9397ab">33%</span></div>
+    <div style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;border-radius:2px;background:#796cbf"></span>SOL <span style="margin-left:auto;color:#9397ab">24%</span></div>
+    <div style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;border-radius:2px;background:#b5abfc"></span>ETH <span style="margin-left:auto;color:#9397ab">17%</span></div>
+    <div style="display:flex;align-items:center;gap:7px"><span style="width:8px;height:8px;border-radius:2px;background:#595d6c"></span>Other <span style="margin-left:auto;color:#9397ab">26%</span></div>
+  </div>
+
+  <div style="margin:16px 18px 0;height:96px;border-radius:8px;background:#1c1e2c;position:relative;overflow:hidden">
+    <svg viewBox="0 0 354 96" width="100%" height="96" preserveAspectRatio="none"><path d="M0 74 L30 68 L60 78 L90 58 L120 64 L150 44 L180 52 L210 34 L240 40 L270 24 L300 30 L330 16 L354 12" fill="none" stroke="#9184d9" stroke-width="2"></path></svg>
+    <div style="position:absolute;left:10px;top:8px;font-size:10px;color:#75798c">30-day balance</div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px 6px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Holdings · 5</span><span style="font-size:11px;color:#9397ab">Sort: value</span></div>
+  <div style="flex:1;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:11px;padding:8px 18px"><span style="width:26px;height:26px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">BTC</span><div style="flex:1"><div style="font-size:13px">1.2140 BTC</div><div style="font-size:11px;color:#75798c">$64,912.40 now · avg $52,110</div></div><div style="font-size:13px">$78,803.65</div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:8px 18px"><span style="width:26px;height:26px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">SOL</span><div style="flex:1"><div style="font-size:13px">210.00 SOL</div><div style="font-size:11px;color:#75798c">$178.42 now · avg $141.20</div></div><div style="font-size:13px">$37,468.20</div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:8px 18px"><span style="width:26px;height:26px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">ETH</span><div style="flex:1"><div style="font-size:13px">8.4000 ETH</div><div style="font-size:11px;color:#75798c">$3,412.88 now · avg $2,904</div></div><div style="font-size:13px">$28,668.19</div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:8px 18px"><span style="width:26px;height:26px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">LINK</span><div style="flex:1"><div style="font-size:13px">640.00 LINK</div><div style="font-size:11px;color:#75798c">$18.44 now · avg $15.02</div></div><div style="font-size:13px">$11,801.60</div></div>
+  </div>
+  <div style="display:flex;justify-content:space-around;padding:8px 0 16px;border-top:1px solid rgba(233,233,237,.08)">
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#9184d9"><i class="ph-fill ph-wallet" style="font-size:20px"></i>Portfolios</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-coins" style="font-size:20px"></i>Coins</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-receipt" style="font-size:20px"></i>History</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-gear" style="font-size:20px"></i>Settings</span>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Add trade — one-screen form (alt to <a class="dv-oid" href="#1g">1g</a>)</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;position:relative">
+  <div style="filter:blur(1px);opacity:.35;padding:44px 18px 0">
+    <div style="font:500 26px/1.1 Inter,sans-serif">$112,480.55</div>
+    <div style="height:120px;margin-top:16px;border-radius:8px;background:#1c1e2c"></div>
+    <div style="height:40px;margin-top:12px;border-radius:8px;background:#1c1e2c"></div>
+    <div style="height:40px;margin-top:8px;border-radius:8px;background:#1c1e2c"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;top:52px;background:#1b1d2b;border-radius:18px 18px 0 0;box-shadow:0 -14px 34px rgba(0,0,0,.55);display:flex;flex-direction:column"><div style="width:36px;height:4px;border-radius:2px;background:#3f424d;margin:9px auto 0"></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:16px 16px 10px"><span style="font-size:15px;font-weight:500">New trade</span><button class="btn btn-icon btn-secondary" style="margin-left:auto;border-color:transparent"><i class="ph ph-x" style="font-size:16px"></i></button></div>
+    <div style="padding:0 16px">
+      <div class="seg" style="width:100%">
+        <label class="seg-opt" style="flex:1;justify-content:center;color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">Buy</label>
+        <label class="seg-opt" style="flex:1;justify-content:center">Sell</label>
+        <label class="seg-opt" style="flex:1;justify-content:center">Transfer</label>
+      </div>
+    </div>
+    <div style="padding:14px 16px 0;display:flex;flex-direction:column;gap:12px">
+      <div class="field"><label>Asset</label>
+        <div class="input" style="display:flex;align-items:center;gap:9px;min-height:42px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">BTC</span><span style="font-size:14px">Bitcoin</span><span style="margin-left:auto;font-size:12px;color:#75798c">$64,912.40</span><i class="ph ph-caret-down" style="color:#75798c"></i></div>
+      </div>
+      <div class="field"><label>Quantity</label>
+        <div class="input" style="display:flex;align-items:center;min-height:42px"><span style="font-size:18px">0.2500</span><span style="margin-left:auto;font-size:12px;color:#75798c">BTC</span></div>
+        <div style="display:flex;gap:6px;margin-top:7px"><span class="tag tag-neutral">25%</span><span class="tag tag-neutral">50%</span><span class="tag tag-neutral">Max</span></div>
+      </div>
+      <div class="field"><label>Price per coin</label>
+        <div class="input" style="display:flex;align-items:center;min-height:42px"><span style="font-size:14px">64,912.40</span><span style="margin-left:auto;font-size:12px;color:#75798c">USD</span></div>
+        <label class="radio" style="margin-top:8px;display:inline-flex;font-size:14px"><input type="radio" name="price2c" defaultChecked="{{ true }}"><span class="dot" style="border-color:#9184d9;background:#9184d9;box-shadow:inset 0 0 0 4px #1b1d2b"></span>Use current market price</label>
+      </div>
+      <div class="field"><label>Pay with</label>
+        <div class="input" style="display:flex;align-items:center;gap:9px;min-height:42px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:8px;color:#d2cefd">USDT</span><span style="font-size:14px">USDT в портфеле</span><span style="margin-left:auto;font-size:12px;color:#75798c">14,208.10</span><i class="ph ph-caret-down" style="color:#75798c"></i></div>
+        <div style="font-size:11px;color:#75798c;margin-top:6px">Обмен: USDT −16,244.33 → BTC +0.2500</div>
+      </div>
+    </div>
+    <div style="margin:auto 16px 0;padding-bottom:16px">
+      <div style="border-radius:8px;background:#232532;padding:10px 12px;font-size:12px;display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex"><span style="color:#75798c">Total cost</span><span style="margin-left:auto">$16,228.10</span></div>
+        <div style="display:flex"><span style="color:#75798c">Fee (0.1%)</span><span style="margin-left:auto">$16.23</span></div>
+        <div style="display:flex;color:#e58a7d"><span>USDT after</span><span style="margin-left:auto">14,208.10 → −2,036.23 · недостаточно</span></div>
+      </div>
+      <button class="btn btn-primary btn-block" style="min-height:42px">Add trade</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="2d">
+<div class="dv-olabel"><a class="dv-oid" href="#2d">2d</a>Add trade — stepped sheet</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;position:relative">
+  <div style="filter:blur(1px);opacity:.3;padding:44px 18px 0">
+    <div style="font:500 26px/1.1 Inter,sans-serif">$112,480.55</div>
+    <div style="height:120px;margin-top:16px;border-radius:8px;background:#1c1e2c"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;top:52px;background:#1b1d2b;border-radius:18px 18px 0 0;box-shadow:0 -14px 34px rgba(0,0,0,.55);display:flex;flex-direction:column"><div style="width:36px;height:4px;border-radius:2px;background:#3f424d;margin:9px auto 0"></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:16px 16px 8px"><button class="btn btn-icon btn-secondary" style="border-color:transparent"><i class="ph ph-arrow-left" style="font-size:16px"></i></button><span style="font-size:15px;font-weight:500">Buy Ethereum</span><span style="margin-left:auto;font-size:11px;color:#75798c">Step 2 of 3</span></div>
+    <div style="display:flex;gap:4px;padding:0 16px 14px"><span style="flex:1;height:2px;background:#9184d9"></span><span style="flex:1;height:2px;background:#9184d9"></span><span style="flex:1;height:2px;background:#3f424d"></span></div>
+
+    <div style="padding:0 16px;text-align:center">
+      <div style="font-size:11px;color:#75798c">How much ETH?</div>
+      <div style="font:500 44px/1.1 Inter,sans-serif;letter-spacing:-.02em;margin-top:10px">2.50 <span style="font-size:20px;color:#75798c">ETH</span></div>
+      <div style="font-size:13px;color:#9397ab;margin-top:6px">≈ $8,532.20</div>
+      <div style="display:flex;justify-content:center;gap:6px;margin-top:14px"><span class="tag tag-neutral">$100</span><span class="tag tag-neutral">$1,000</span><span class="tag tag-neutral">Half</span><span class="tag tag-neutral">Max</span></div>
+    </div>
+
+    <div style="margin:18px 16px 0;border-radius:8px;background:#232532;padding:11px 12px;font-size:12px;display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex"><span style="color:#75798c">Market price</span><span style="margin-left:auto">$3,412.88</span></div>
+      <div style="display:flex"><span style="color:#75798c">Source</span><span style="margin-left:auto">Binance · 12s ago</span></div>
+      <div style="display:flex"><span style="color:#75798c">Cash after</span><span style="margin-left:auto">$—</span></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:auto 0 0;background:#2b2d3a">
+      <span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">1</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">2</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">3</span>
+      <span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">4</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">5</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">6</span>
+      <span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">7</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">8</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">9</span>
+      <span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">.</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px">0</span><span style="background:#1b1d2b;padding:15px 0;text-align:center;font-size:19px;color:#9397ab"><i class="ph ph-backspace"></i></span>
+    </div>
+    <div style="padding:12px 16px 16px"><button class="btn btn-primary btn-block" style="min-height:44px;margin-top:0">Continue</button></div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "keep <a class="dv-oid" href="#2a">2a</a> but move the donut from <a class="dv-oid" href="#2b">2b</a> under the chart" · "make <a class="dv-oid" href="#2c">2c</a> a bottom sheet instead" · "add a light theme"</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Core flow — internal ops tool, mobile-first, Nocturne dark</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Sign in</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:70px 26px 0">
+    <div style="display:flex;align-items:center;gap:9px"><span style="width:26px;height:26px;border-radius:7px;box-shadow:inset 0 0 0 1px #9184d9;display:grid;place-items:center;color:#9184d9"><i class="ph ph-vault" style="font-size:15px"></i></span><span style="font-size:15px;font-weight:500;letter-spacing:.02em">Ledgerdesk</span></div>
+    <h3 style="margin:34px 0 6px">Sign in</h3>
+    <p style="font-size:13px;color:#9397ab;margin:0">Internal portfolio operations. Access is limited to desk accounts.</p>
+  </div>
+  <div style="padding:26px 26px 0;display:flex;flex-direction:column;gap:12px">
+    <button class="btn btn-secondary btn-block" style="min-height:44px;gap:10px;margin-top:0"><span style="width:18px;height:18px;border-radius:50%;background:#e9e9ed;color:#161826;font-size:11px;font-weight:600;display:grid;place-items:center">G</span>Continue with Google</button>
+    <div style="display:flex;align-items:center;gap:10px;font-size:11px;color:#595d6c"><span style="flex:1;height:1px;background:rgba(233,233,237,.12)"></span>or<span style="flex:1;height:1px;background:rgba(233,233,237,.12)"></span></div>
+    <div class="field"><label>Work email</label><input class="input" style="min-height:42px" value="o.botkov@ledgerdesk.io" readonly=""></div>
+    <div class="field"><label>Password</label>
+      <div style="position:relative"><input class="input" type="password" style="min-height:42px;padding-right:38px" value="oooooooooo" readonly=""><i class="ph ph-eye" style="position:absolute;right:11px;top:12px;color:#75798c"></i></div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <label class="radio"><input type="radio" name="keepsignedin" defaultChecked="{{ true }}"><span class="dot" style="border-color:#9184d9;background:#9184d9;box-shadow:inset 0 0 0 4px #161826"></span>Keep me signed in</label>
+      <a href="#1a" style="font-size:12px;text-decoration:none">Reset</a>
+    </div>
+    <button class="btn btn-primary btn-block" style="min-height:44px">Sign in</button>
+    <p style="font-size:11px;color:#595d6c;margin-top:2px">Two-factor is required on new devices.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Coins — admin sync view</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:14px 18px 8px">
+    <div style="display:flex;align-items:baseline;gap:10px"><h4 style="margin:0">Coins</h4><span style="font-size:11px;color:#75798c">42 loaded</span><button class="btn btn-primary" style="margin-left:auto;font-size:12px;padding:5px 10px"><i class="ph ph-arrows-clockwise" style="font-size:13px"></i>Update now</button></div>
+    <div style="display:flex;align-items:center;gap:7px;margin-top:8px;font-size:11px;color:#75798c"><span style="width:6px;height:6px;border-radius:50%;background:#7fd6a2"></span>Last full sync 09:38:04 · next in 4m 22s</div>
+  </div>
+  <div style="padding:0 18px 10px"><div class="seg" style="width:100%"><label class="seg-opt" style="flex:1;justify-content:center;color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">Sync</label><label class="seg-opt" style="flex:1;justify-content:center">Market</label><label class="seg-opt" style="flex:1;justify-content:center">Disabled</label></div></div>
+  <div style="padding:0 18px 8px"><div class="input" style="display:flex;align-items:center;gap:8px;min-height:36px;color:#75798c"><i class="ph ph-magnifying-glass" style="font-size:14px"></i><span style="font-size:13px">Search symbol or name</span></div></div>
+
+  <div style="flex:1;overflow:hidden;padding:0 8px">
+    <table class="table" style="font-size:13px">
+      <thead><tr><th style="padding-left:10px">Coin</th><th>Mode</th><th style="text-align:right;padding-right:10px">Updated</th></tr></thead>
+      <tbody>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">BTC</span><div><div>Bitcoin</div><div style="font-size:11px;color:#75798c">$64,912.40</div></div></div></td><td><span class="tag tag-accent">Auto 1m</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#9397ab">12s ago<div><i class="ph ph-arrows-clockwise" style="font-size:13px;color:#9184d9"></i></div></td></tr>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">ETH</span><div><div>Ethereum</div><div style="font-size:11px;color:#75798c">$3,412.88</div></div></div></td><td><span class="tag tag-accent">Auto 1m</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#9397ab">12s ago<div><i class="ph ph-arrows-clockwise" style="font-size:13px;color:#9184d9"></i></div></td></tr>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">SOL</span><div><div>Solana</div><div style="font-size:11px;color:#75798c">$178.42</div></div></div></td><td><span class="tag tag-neutral">Auto 5m</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#9397ab">3m ago<div><i class="ph ph-arrows-clockwise" style="font-size:13px;color:#9184d9"></i></div></td></tr>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">LINK</span><div><div>Chainlink</div><div style="font-size:11px;color:#75798c">$18.44</div></div></div></td><td><span class="tag tag-neutral">Auto 5m</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#9397ab">syncing<div><i class="ph ph-circle-notch" style="font-size:13px;color:#9184d9"></i></div></td></tr>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">XRP</span><div><div>XRP</div><div style="font-size:11px;color:#75798c">$0.6120</div></div></div></td><td><span class="tag tag-outline">Manual</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#e58a7d">2h ago<div><i class="ph ph-arrows-clockwise" style="font-size:13px;color:#9184d9"></i></div></td></tr>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">AVAX</span><div><div>Avalanche</div><div style="font-size:11px;color:#75798c">$34.12</div></div></div></td><td><span class="tag tag-outline">Manual</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#9397ab">18m ago<div><i class="ph ph-arrows-clockwise" style="font-size:13px;color:#9184d9"></i></div></td></tr>
+        <tr><td style="padding-left:10px"><div style="display:flex;align-items:center;gap:9px;opacity:.5"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">ARB</span><div><div>Arbitrum</div><div style="font-size:11px;color:#75798c">$1.08</div></div></div></td><td><span class="tag tag-neutral" style="opacity:.6">Paused</span></td><td style="text-align:right;padding-right:10px;font-size:11px;color:#595d6c">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display:flex;justify-content:space-around;padding:8px 0 16px;border-top:1px solid rgba(233,233,237,.08)">
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-wallet" style="font-size:20px"></i>Portfolios</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#9184d9"><i class="ph-fill ph-coins" style="font-size:20px"></i>Coins</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-receipt" style="font-size:20px"></i>History</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-gear" style="font-size:20px"></i>Settings</span>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Coins — market browse</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:14px 18px 10px"><div style="display:flex;align-items:baseline"><h4 style="margin:0">Market</h4><span style="margin-left:auto;font-size:11px;color:#75798c">Prices 12s old</span></div></div>
+  <div style="padding:0 18px 10px;display:flex;gap:6px"><span class="tag tag-neutral" style="box-shadow:inset 0 0 0 1px #9184d9;background:transparent;color:#9184d9">All</span><span class="tag tag-neutral">Held</span><span class="tag tag-neutral">Gainers</span><span class="tag tag-neutral">Stable</span></div>
+  <div style="flex:1;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">BTC</span><div style="flex:1;min-width:0"><div style="font-size:14px">Bitcoin</div><div style="font-size:11px;color:#75798c">BTC · held in 2 portfolios</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 18 L9 14 L17 20 L26 10 L34 13 L43 6 L52 3" fill="none" stroke="#7fd6a2" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$64,912.40</div><div style="font-size:11px;color:#7fd6a2">+1.84%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">ETH</span><div style="flex:1;min-width:0"><div style="font-size:14px">Ethereum</div><div style="font-size:11px;color:#75798c">ETH · held in 3 portfolios</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 8 L9 11 L17 7 L26 14 L34 12 L43 18 L52 16" fill="none" stroke="#e58a7d" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$3,412.88</div><div style="font-size:11px;color:#e58a7d">−0.62%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">SOL</span><div style="flex:1;min-width:0"><div style="font-size:14px">Solana</div><div style="font-size:11px;color:#75798c">SOL · held in 2 portfolios</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 20 L9 16 L17 17 L26 9 L34 11 L43 5 L52 2" fill="none" stroke="#7fd6a2" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$178.42</div><div style="font-size:11px;color:#7fd6a2">+4.10%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">USDT</span><div style="flex:1;min-width:0"><div style="font-size:14px">Tether</div><div style="font-size:11px;color:#75798c">USDT · settlement</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 12 L9 12 L17 11 L26 12 L34 12 L43 13 L52 12" fill="none" stroke="#75798c" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$1.0002</div><div style="font-size:11px;color:#75798c">0.00%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">LINK</span><div style="flex:1;min-width:0"><div style="font-size:14px">Chainlink</div><div style="font-size:11px;color:#75798c">LINK · held in 1 portfolio</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 15 L9 17 L17 12 L26 13 L34 8 L43 10 L52 6" fill="none" stroke="#7fd6a2" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$18.44</div><div style="font-size:11px;color:#7fd6a2">+2.21%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">AVAX</span><div style="flex:1;min-width:0"><div style="font-size:14px">Avalanche</div><div style="font-size:11px;color:#75798c">AVAX</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 9 L9 12 L17 10 L26 15 L34 14 L43 19 L52 17" fill="none" stroke="#e58a7d" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$34.12</div><div style="font-size:11px;color:#e58a7d">−1.05%</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:10px 18px"><span style="width:30px;height:30px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">XRP</span><div style="flex:1;min-width:0"><div style="font-size:14px">XRP</div><div style="font-size:11px;color:#75798c">XRP · manual price</div></div><svg width="52" height="24" viewBox="0 0 52 24"><path d="M0 13 L9 13 L17 14 L26 12 L34 15 L43 14 L52 13" fill="none" stroke="#75798c" stroke-width="1.5"></path></svg><div style="text-align:right;min-width:78px"><div style="font-size:13px">$0.6120</div><div style="font-size:11px;color:#75798c">+0.14%</div></div></div>
+  </div>
+  <div style="display:flex;justify-content:space-around;padding:8px 0 16px;border-top:1px solid rgba(233,233,237,.08)">
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-wallet" style="font-size:20px"></i>Portfolios</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#9184d9"><i class="ph-fill ph-coins" style="font-size:20px"></i>Coins</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-receipt" style="font-size:20px"></i>History</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-gear" style="font-size:20px"></i>Settings</span>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Portfolios — overview</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column;position:relative">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:16px 18px 0">
+    <div style="display:flex;align-items:center"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Total balance</span><span style="margin-left:auto;font-size:11px;color:#75798c">USD</span></div>
+    <div style="font:500 36px/1.05 Inter,sans-serif;letter-spacing:-.025em;margin-top:6px">$184,392.18</div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px"><span style="color:#7fd6a2">+$3,181.44 · +1.76%</span><span style="color:#75798c">24h</span></div>
+    <div style="display:flex;gap:1px;margin-top:14px;border-radius:6px;overflow:hidden;height:6px"><span style="flex:61;background:#9184d9"></span><span style="flex:26;background:#796cbf"></span><span style="flex:13;background:#595d6c"></span></div>
+    <div style="display:flex;gap:12px;margin-top:7px;font-size:11px;color:#75798c"><span>Core 61%</span><span>Alt 26%</span><span>Yield 13%</span></div>
+  </div>
+
+  <div style="display:flex;align-items:baseline;padding:20px 18px 6px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Portfolios · 3</span><span style="margin-left:auto;font-size:11px;color:#9184d9">Sort: value</span></div>
+  <div style="padding:0 18px;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="flex:1;font-size:15px">Core Long</span><span style="font-size:15px">$112,480.55</span><span style="min-width:56px;text-align:right;font-size:13px;color:#7fd6a2">+20.2%</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="flex:1;font-size:15px">Alt Rotation</span><span style="font-size:15px">$48,207.32</span><span style="min-width:56px;text-align:right;font-size:13px;color:#e58a7d">−4.8%</span></div>
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid rgba(233,233,237,.08)"><span style="flex:1;font-size:15px">Yield Desk</span><span style="font-size:15px">$23,704.31</span><span style="min-width:56px;text-align:right;font-size:13px;color:#7fd6a2">+2.1%</span></div>
+    <button class="btn btn-secondary btn-block" style="min-height:42px;border-style:dashed;margin-top:18px"><i class="ph ph-plus" style="font-size:14px"></i>New portfolio</button>
+  </div>
+
+  <button class="btn btn-primary" style="position:absolute;right:18px;bottom:78px;width:52px;height:52px;border-radius:50%;background:#232532;box-shadow:0 8px 22px rgba(0,0,0,.5)"><i class="ph ph-plus" style="font-size:22px"></i></button>
+  <div style="margin-top:auto;display:flex;justify-content:space-around;padding:8px 0 16px;border-top:1px solid rgba(233,233,237,.08)">
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#9184d9"><i class="ph-fill ph-wallet" style="font-size:20px"></i>Portfolios</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-coins" style="font-size:20px"></i>Coins</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-receipt" style="font-size:20px"></i>History</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-gear" style="font-size:20px"></i>Settings</span>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Empty states — no portfolio / new portfolio sheet</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column;position:relative">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:16px 18px 0">
+    <span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Total balance</span>
+    <div style="font:500 36px/1.05 Inter,sans-serif;letter-spacing:-.025em;margin-top:6px;color:#595d6c">$0.00</div>
+  </div>
+  <div style="margin:56px 26px 0;text-align:center">
+    <span style="width:46px;height:46px;border-radius:12px;box-shadow:inset 0 0 0 1px #3f424d;display:inline-grid;place-items:center;color:#75798c"><i class="ph ph-wallet" style="font-size:22px"></i></span>
+    <div style="font-size:16px;margin-top:14px">No portfolios yet</div>
+    <p style="font-size:13px;color:#75798c;margin-top:6px">Create one to start recording trades. Coins are already synced from the market feed.</p>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;background:#1b1d2b;border-radius:18px 18px 0 0;box-shadow:0 -12px 30px rgba(0,0,0,.5);padding:14px 18px 20px">
+    <div style="width:36px;height:4px;border-radius:2px;background:#3f424d;margin:0 auto 12px"></div>
+    <div style="font-size:15px;font-weight:500;margin-bottom:12px">New portfolio</div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="field"><label>Name</label><input class="input" style="min-height:42px" value="Core Long" readonly=""></div>
+      <div class="field"><label>Base currency</label><div class="seg" style="width:100%"><label class="seg-opt" style="flex:1;justify-content:center;color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">USD</label><label class="seg-opt" style="flex:1;justify-content:center">EUR</label><label class="seg-opt" style="flex:1;justify-content:center">USDT</label></div></div>
+      <div class="field"><label>Opening cash (optional)</label><input class="input" style="min-height:42px" value="25,000.00" readonly=""></div>
+      <button class="btn btn-primary btn-block" style="min-height:44px">Create portfolio</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1f">
+<div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Portfolio detail — baseline</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column;position:relative">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 14px 6px"><button class="btn btn-icon btn-secondary" style="border-color:transparent"><i class="ph ph-arrow-left" style="font-size:18px"></i></button><span style="font-size:14px;font-weight:500">Core Long</span><button class="btn btn-icon btn-secondary" style="margin-left:auto;border-color:transparent"><i class="ph ph-dots-three-vertical" style="font-size:18px"></i></button></div>
+
+  <div style="padding:4px 18px 0">
+    <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Total value</div>
+    <div style="font:500 30px/1.1 Inter,sans-serif;letter-spacing:-.02em;margin-top:4px">$112,480.55</div>
+    <div style="display:flex;gap:14px;margin-top:8px;font-size:12px"><span style="color:#7fd6a2">P&amp;L +$18,904.22 (+20.2%)</span><span style="color:#75798c">Cash $6,120.00</span></div>
+  </div>
+
+  <div style="margin:14px 18px 0;height:150px;position:relative">
+    <svg viewBox="0 0 354 150" width="100%" height="150" preserveAspectRatio="none">
+      <defs><linearGradient id="g1f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9184d9" stop-opacity=".32"></stop><stop offset="1" stop-color="#9184d9" stop-opacity="0"></stop></linearGradient></defs>
+      <path d="M0 116 L30 108 L60 122 L90 92 L120 100 L150 74 L180 84 L210 58 L240 66 L270 42 L300 50 L330 28 L354 20 L354 150 L0 150 Z" fill="url(#g1f)"></path>
+      <path d="M0 116 L30 108 L60 122 L90 92 L120 100 L150 74 L180 84 L210 58 L240 66 L270 42 L300 50 L330 28 L354 20" fill="none" stroke="#9184d9" stroke-width="2"></path>
+    </svg>
+  </div>
+  <div style="display:flex;gap:6px;padding:8px 18px 0">
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1D</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1W</span>
+    <span class="tag tag-neutral" style="background:transparent;box-shadow:inset 0 0 0 1px #9184d9;color:#9184d9">1M</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">1Y</span>
+    <span class="tag tag-neutral" style="background:transparent;color:#9397ab">ALL</span>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 18px 4px"><span style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c">Coins</span><span style="font-size:11px;color:#75798c">Qty · price now</span></div>
+  <div style="flex:1;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">BTC</span><div style="flex:1;min-width:0"><div style="font-size:13px">Bitcoin <span style="color:#75798c">1.2140</span></div><div style="font-size:11px;color:#75798c">$64,912.40 · avg $52,110.00</div></div><div style="text-align:right"><div style="font-size:13px">$78,803.65</div><div style="font-size:11px;color:#7fd6a2">+1.84% 24h</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">SOL</span><div style="flex:1;min-width:0"><div style="font-size:13px">Solana <span style="color:#75798c">210.00</span></div><div style="font-size:11px;color:#75798c">$178.42 · avg $141.20</div></div><div style="text-align:right"><div style="font-size:13px">$37,468.20</div><div style="font-size:11px;color:#7fd6a2">+4.10% 24h</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">ETH</span><div style="flex:1;min-width:0"><div style="font-size:13px">Ethereum <span style="color:#75798c">8.4000</span></div><div style="font-size:11px;color:#75798c">$3,412.88 · avg $2,904.00</div></div><div style="text-align:right"><div style="font-size:13px">$28,668.19</div><div style="font-size:11px;color:#e58a7d">−0.62% 24h</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:10px;color:#d2cefd">LINK</span><div style="flex:1;min-width:0"><div style="font-size:13px">Chainlink <span style="color:#75798c">640.00</span></div><div style="font-size:11px;color:#75798c">$18.44 · avg $15.02</div></div><div style="text-align:right"><div style="font-size:13px">$11,801.60</div><div style="font-size:11px;color:#7fd6a2">+2.21% 24h</div></div></div>
+  </div>
+
+  <button class="btn btn-primary" style="position:absolute;right:18px;bottom:78px;width:52px;height:52px;border-radius:50%;background:#232532;box-shadow:0 8px 22px rgba(0,0,0,.5)"><i class="ph ph-plus" style="font-size:22px"></i></button>
+  <div style="display:flex;justify-content:space-around;padding:8px 0 16px;border-top:1px solid rgba(233,233,237,.08)">
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#9184d9"><i class="ph-fill ph-wallet" style="font-size:20px"></i>Portfolios</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-coins" style="font-size:20px"></i>Coins</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-receipt" style="font-size:20px"></i>History</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-gear" style="font-size:20px"></i>Settings</span>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1g">
+<div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Add trade — bottom sheet (buy / sell)</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;position:relative">
+  <div style="filter:blur(1px);opacity:.32;padding:44px 18px 0">
+    <div style="font:500 30px/1.1 Inter,sans-serif">$112,480.55</div>
+    <div style="height:150px;margin-top:16px;border-radius:8px;background:#1c1e2c"></div>
+    <div style="height:44px;margin-top:14px;border-radius:8px;background:#1c1e2c"></div>
+    <div style="height:44px;margin-top:8px;border-radius:8px;background:#1c1e2c"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;top:24px;background:#1b1d2b;border-radius:18px 18px 0 0;box-shadow:0 -14px 34px rgba(0,0,0,.55);display:flex;flex-direction:column"><div style="width:36px;height:4px;border-radius:2px;background:#3f424d;margin:9px auto 0"></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:12px 16px 8px"><span style="font-size:15px;font-weight:500">Add trade</span><span style="font-size:11px;color:#75798c">Core Long</span><button class="btn btn-icon btn-secondary" style="margin-left:auto;border-color:transparent"><i class="ph ph-x" style="font-size:16px"></i></button></div>
+    <div style="padding:0 16px"><div class="seg" style="width:100%"><label class="seg-opt" style="flex:1;justify-content:center;color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">Buy</label><label class="seg-opt" style="flex:1;justify-content:center">Sell</label><label class="seg-opt" style="flex:1;justify-content:center">Deposit</label><label class="seg-opt" style="flex:1;justify-content:center">Withdraw</label></div></div>
+
+    <div style="padding:14px 16px 0"><div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#75798c;margin-bottom:8px">Coin</div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap">
+        <span class="tag" style="background:#2b2741;color:#d2cefd;box-shadow:inset 0 0 0 1px #9184d9;padding:5px 11px">BTC</span>
+        <span class="tag tag-neutral" style="padding:5px 11px">ETH</span>
+        <span class="tag tag-neutral" style="padding:5px 11px">SOL</span>
+        <span class="tag tag-neutral" style="padding:5px 11px">LINK</span>
+        <span class="tag tag-outline" style="padding:5px 11px">Search…</span>
+      </div>
+    </div>
+
+    <div style="padding:10px 16px 0;display:flex;flex-direction:column;gap:9px">
+      <div class="field"><label>Quantity</label><div class="input" style="display:flex;align-items:center;min-height:44px"><span style="font-size:20px">0.1500</span><span style="margin-left:auto;font-size:12px;color:#75798c">BTC · ≈$9,736.86</span></div></div>
+      <div class="field"><label>Price per coin</label><div class="input" style="display:flex;align-items:center;min-height:44px;box-shadow:inset 0 0 0 1px #9184d9"><span style="font-size:15px">64,912.40</span><span style="margin-left:auto;font-size:11px;color:#9184d9">market · 12s ago</span></div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:9px">
+          <label class="radio"><input type="radio" name="price1g" defaultChecked="{{ true }}"><span class="dot" style="border-color:#9184d9;background:#9184d9;box-shadow:inset 0 0 0 4px #1b1d2b"></span>Use current coin price</label>
+          <label class="radio"><input type="radio" name="price1g"><span class="dot"></span>Enter my own price</label>
+        </div>
+      </div>
+      <div class="field"><label>Сумма сделки</label><div class="input" style="display:flex;align-items:center;min-height:44px"><span style="font-size:17px">9,736.86</span><span style="margin-left:auto;font-size:12px;color:#75798c">USDT · из остатка 14,208.10</span></div></div>
+      <div class="field"><label>Pay with</label>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          <span class="tag tag-neutral" style="padding:5px 11px">Cash USD</span>
+          <span class="tag" style="background:#2b2741;color:#d2cefd;box-shadow:inset 0 0 0 1px #9184d9;padding:5px 11px">USDT</span>
+          <span class="tag tag-neutral" style="padding:5px 11px">SOL</span>
+          <span class="tag tag-neutral" style="padding:5px 11px">ETH</span>
+        </div>
+        <div style="font-size:11px;color:#75798c;margin-top:6px">Обмен внутри портфеля: остаток USDT уменьшится, остаток BTC вырастет.</div>
+      </div>
+    </div>
+
+    <div style="margin:auto 16px 0;padding-bottom:16px">
+      <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:#75798c;margin-bottom:8px"><i class="ph ph-calendar-blank"></i>18 Aug 2026, 09:41<span style="margin-left:auto;color:#9184d9">Изменить</span></div>
+      <div style="border-radius:8px;background:#232532;padding:11px 12px;font-size:12px;display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:8px;color:#d2cefd">USDT</span><span style="color:#75798c">Остаток USDT</span><span style="margin-left:auto">14,208.10 → <span style="color:#e58a7d">4,471.24</span></span></div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="width:20px;height:20px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:8px;color:#d2cefd">BTC</span><span style="color:#75798c">Остаток BTC</span><span style="margin-left:auto">1.2140 → <span style="color:#7fd6a2">1.3640</span></span></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-secondary" style="flex:1;min-height:44px">Cancel</button><button class="btn btn-primary" style="flex:2;min-height:44px">Add trade</button></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1h">
+<div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Deposit / withdraw</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;position:relative">
+  <div style="filter:blur(1px);opacity:.32;padding:44px 18px 0">
+    <div style="font:500 30px/1.1 Inter,sans-serif">$112,480.55</div>
+    <div style="height:150px;margin-top:16px;border-radius:8px;background:#1c1e2c"></div>
+  </div>
+  <div style="position:absolute;left:0;right:0;bottom:0;top:52px;background:#1b1d2b;border-radius:18px 18px 0 0;box-shadow:0 -14px 34px rgba(0,0,0,.55);display:flex;flex-direction:column"><div style="width:36px;height:4px;border-radius:2px;background:#3f424d;margin:9px auto 0"></div>
+    <div style="display:flex;align-items:center;gap:10px;padding:16px 16px 10px"><span style="font-size:15px;font-weight:500">Cash movement</span><button class="btn btn-icon btn-secondary" style="margin-left:auto;border-color:transparent"><i class="ph ph-x" style="font-size:16px"></i></button></div>
+    <div style="padding:0 16px"><div class="seg" style="width:100%"><label class="seg-opt" style="flex:1;justify-content:center">Buy</label><label class="seg-opt" style="flex:1;justify-content:center">Sell</label><label class="seg-opt" style="flex:1;justify-content:center;color:#9184d9;box-shadow:inset 0 0 0 1px #9184d9">Deposit</label><label class="seg-opt" style="flex:1;justify-content:center">Withdraw</label></div></div>
+
+    <div style="padding:22px 16px 0;text-align:center">
+      <div style="font-size:11px;color:#75798c">Deposit to Core Long</div>
+      <div style="font:500 40px/1.1 Inter,sans-serif;letter-spacing:-.02em;margin-top:8px">$5,000<span style="color:#75798c">.00</span></div>
+      <div style="display:flex;justify-content:center;gap:6px;margin-top:12px"><span class="tag tag-neutral">$1,000</span><span class="tag tag-neutral">$5,000</span><span class="tag tag-neutral">$10,000</span></div>
+    </div>
+
+    <div style="padding:20px 16px 0;display:flex;flex-direction:column;gap:12px">
+      <div class="field"><label>Asset</label>
+        <div class="input" style="display:flex;align-items:center;gap:9px;min-height:44px"><span style="width:24px;height:24px;border-radius:50%;background:#2b2741;display:grid;place-items:center;font-size:9px;color:#d2cefd">USD</span><span style="font-size:14px">US Dollar (cash)</span><i class="ph ph-caret-down" style="margin-left:auto;color:#75798c"></i></div>
+        <div style="font-size:11px;color:#75798c;margin-top:6px">Switch to a coin to record an in-kind transfer instead.</div>
+      </div>
+      <div class="field"><label>Source</label><div class="input" style="display:flex;align-items:center;min-height:40px"><span style="font-size:14px">Bank wire · ****4471</span><i class="ph ph-caret-down" style="margin-left:auto;color:#75798c"></i></div></div>
+      <div class="field"><label>Date</label><div class="input" style="display:flex;align-items:center;min-height:40px"><span style="font-size:14px">18 Aug 2026</span><i class="ph ph-calendar-blank" style="margin-left:auto;color:#75798c"></i></div></div>
+    </div>
+
+    <div style="margin:auto 16px 0;padding-bottom:16px">
+      <div style="border-radius:8px;background:#232532;padding:11px 12px;font-size:12px;display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex"><span style="color:#75798c">Cash now</span><span style="margin-left:auto">$6,120.00</span></div>
+        <div style="display:flex"><span style="color:#75798c">Cash after</span><span style="margin-left:auto;color:#7fd6a2">$11,120.00</span></div>
+      </div>
+      <button class="btn btn-primary btn-block" style="min-height:44px">Record deposit</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="dv-opt" id="1i">
+<div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Transaction history</div>
+<div class="dv-card" style="width:390px">
+<div style="width:390px;height:780px;overflow:hidden;background:#161826;color:#e9e9ed;display:flex;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 18px 0;font-size:11px;color:#9397ab"><span>9:41</span><span style="display:flex;gap:5px"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+  <div style="padding:14px 18px 8px;display:flex;align-items:baseline"><h4 style="margin:0">History</h4><span style="margin-left:auto;font-size:11px;color:#9184d9">Filter</span></div>
+  <div style="padding:0 18px 10px;display:flex;gap:6px"><span class="tag tag-neutral" style="box-shadow:inset 0 0 0 1px #9184d9;background:transparent;color:#9184d9">All</span><span class="tag tag-neutral">Buys</span><span class="tag tag-neutral">Sells</span><span class="tag tag-neutral">Cash</span></div>
+  <div style="flex:1;overflow:hidden">
+    <div style="padding:8px 18px 4px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#595d6c">Today</div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-down-left" style="font-size:14px"></i></span><div style="flex:1"><div style="font-size:13px">Buy BTC</div><div style="font-size:11px;color:#75798c">0.1500 @ $64,912.40 · Core Long</div></div><div style="text-align:right"><div style="font-size:13px">−$9,736.86</div><div style="font-size:11px;color:#75798c">09:41</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-bank" style="font-size:14px"></i></span><div style="flex:1"><div style="font-size:13px">Deposit USD</div><div style="font-size:11px;color:#75798c">Bank wire ****4471 · Core Long</div></div><div style="text-align:right"><div style="font-size:13px;color:#7fd6a2">+$5,000.00</div><div style="font-size:11px;color:#75798c">09:12</div></div></div>
+    <div style="padding:12px 18px 4px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#595d6c">17 Aug</div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-up-right" style="font-size:14px"></i></span><div style="flex:1"><div style="font-size:13px">Sell AVAX</div><div style="font-size:11px;color:#75798c">120.00 @ $34.55 · Alt Rotation</div></div><div style="text-align:right"><div style="font-size:13px;color:#7fd6a2">+$4,146.00</div><div style="font-size:11px;color:#75798c">18:22</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrows-left-right" style="font-size:14px"></i></span><div style="flex:1"><div style="font-size:13px">Transfer SOL</div><div style="font-size:11px;color:#75798c">40.00 · Alt Rotation → Core Long</div></div><div style="text-align:right"><div style="font-size:13px">$7,136.80</div><div style="font-size:11px;color:#75798c">15:04</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-arrow-down-left" style="font-size:14px"></i></span><div style="flex:1"><div style="font-size:13px">Buy LINK</div><div style="font-size:11px;color:#75798c">240.00 @ $17.98 · Core Long</div></div><div style="text-align:right"><div style="font-size:13px">−$4,315.20</div><div style="font-size:11px;color:#75798c">11:47</div></div></div>
+    <div style="display:flex;align-items:center;gap:11px;padding:9px 18px"><span style="width:28px;height:28px;flex:none;border-radius:8px;background:#2b2741;display:grid;place-items:center;color:#d2cefd"><i class="ph ph-bank" style="font-size:14px"></i></span><div style="flex:1"><div style="font-size:13px">Withdraw USD</div><div style="font-size:11px;color:#75798c">Bank wire ****4471 · Yield Desk</div></div><div style="text-align:right"><div style="font-size:13px;color:#e58a7d">−$2,000.00</div><div style="font-size:11px;color:#75798c">09:30</div></div></div>
+  </div>
+  <div style="display:flex;justify-content:space-around;padding:8px 0 16px;border-top:1px solid rgba(233,233,237,.08)">
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-wallet" style="font-size:20px"></i>Portfolios</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-coins" style="font-size:20px"></i>Coins</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#9184d9"><i class="ph-fill ph-receipt" style="font-size:20px"></i>History</span>
+    <span style="display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#75798c"><i class="ph ph-gear" style="font-size:20px"></i>Settings</span>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "the <a class="dv-oid" href="#1b">1b</a> table needs a bulk mode switch" · "show <a class="dv-oid" href="#1g">1g</a> as a bottom sheet" · "add a desktop layout for <a class="dv-oid" href="#1d">1d</a>"</p>
+</section>
+
+</x-dc>
+</body>
+</html>
