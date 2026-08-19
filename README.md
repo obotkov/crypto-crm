@@ -64,11 +64,13 @@ Caddy, что и на проде; если нет — простой стати�
 ## Первичная настройка (уже сделана, для справки)
 
 1. На сервере: `bash deploy/bootstrap-server.sh`
-2. В GitHub → Settings → Secrets and variables → Actions добавлен секрет
-   `DEPLOY_SSH_KEY` — приватный ключ, чей публичный лежит в
-   `/root/.ssh/authorized_keys` на сервере.
-   Опционально `DEPLOY_KNOWN_HOSTS` — вывод `ssh-keyscan -H 89.110.92.149`,
-   чтобы не доверять хосту вслепую на каждом прогоне.
+2. В GitHub → Settings → Secrets and variables → Actions заведены два секрета:
+   `DEPLOY_SSH_KEY` — приватный ключ (локально `~/.ssh/wildex-deploy`), чей
+   публичный лежит в `/root/.ssh/authorized_keys` на сервере;
+   `DEPLOY_KNOWN_HOSTS` — вывод `ssh-keyscan 89.110.92.149`, чтобы workflow
+   не доверял хосту вслепую на каждом прогоне.
+   При переустановке сервера ключ хоста меняется — тогда `DEPLOY_KNOWN_HOSTS`
+   нужно перезаписать, иначе деплой упадёт на проверке хоста.
 3. DNS: A-запись `wild-loop.online → 89.110.92.149`.
 
 ## Проверка прода
